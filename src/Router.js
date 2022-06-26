@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Footer from "./components/Footer/Footer";
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
           }
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
