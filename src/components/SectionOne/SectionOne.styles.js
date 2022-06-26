@@ -29,6 +29,21 @@ export const SectionOne = styled.div`
     width: 100%;
     height: auto;
   }
+  .registerContainer {
+    width: 100%;
+    height: auto;
+  }
+  .registrationBenefits {
+    width: 100%;
+    height: auto;
+  }
+  .registerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+  }
   @media screen and (min-width: 481px) {
     h1 {
       font-size: 2rem;
@@ -46,6 +61,15 @@ export const SectionOne = styled.div`
     }
     .loginContainer {
       width: 25%;
+    }
+    .registerContainer {
+      width: 45%;
+    }
+    .registrationBenefits {
+      width: 45%;
+    }
+    .registerWrapper {
+      margin-top: 5rem;
     }
   }
   @media screen and (min-width: 1201px) {

@@ -37,7 +37,6 @@ export const BurgerMenu = styled.div`
     padding: 1rem;
   }
   .navbar-item:hover {
-    border-bottom: 2px solid #cccccc;
     color: #646fd4;
     transition: 0.3s ease-in-out;
   }
@@ -46,10 +45,11 @@ export const BurgerMenu = styled.div`
     flex-flow: column nowrap;
     background: #000000;
     transform: ${({ active }) =>
-      active ? "translateX(0)" : "translateX(-100%)"};
+      active ? "translateX(0)" : "translateX(100%)"};
     position: absolute;
+    transition: 0.3s ease-in-out;
     top: 6.4rem;
-    right: 0;
+    left: 0;
     width: 100%;
 
     button {
