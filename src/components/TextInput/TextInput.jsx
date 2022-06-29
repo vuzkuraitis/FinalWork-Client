@@ -23,7 +23,7 @@ const TextInput = ({ type, label, placeholder, value, handleChange }) => {
 };
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(["text", "email", "password"]),
+  type: PropTypes.oneOf(["text", "number", "email", "password"]),
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string,

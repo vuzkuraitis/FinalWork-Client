@@ -8,6 +8,7 @@ export const Notification = styled.div`
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
+  width: 100%;
 
   button {
     border-radius: 50%;

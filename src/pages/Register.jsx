@@ -32,8 +32,8 @@ const Register = () => {
   };
   return (
     <>
-      {error && <Notification>{error}</Notification>}
       <SectionOne>
+        {error && <Notification>{error}</Notification>}
         <div className="registerWrapper">
           <BenefitsList className="registrationBenefits">
             <Hero title="Why is better to be registered?" />
