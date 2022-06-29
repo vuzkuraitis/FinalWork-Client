@@ -8,4 +8,8 @@ export const Hero = styled.div`
   h1 {
     font-size: 1.25rem;
   }
+
+  .subtitle {
+    text-align: center;
+  }
 `;

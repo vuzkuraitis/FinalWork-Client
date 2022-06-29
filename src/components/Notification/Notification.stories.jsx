@@ -6,7 +6,6 @@ export default {
   component: Notification,
 };
 
-export const Primary = () => <Notification>Notification</Notification>;
-export const Secondary = () => (
+export const Primary = () => (
   <Notification handleClick={() => alert("hi")}>Notification</Notification>
 );

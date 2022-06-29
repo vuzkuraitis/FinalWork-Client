@@ -34,7 +34,7 @@ export const BurgerMenu = styled.div`
     color: #ffffff;
     text-decoration: none;
     margin: 0 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .navbar-item:hover {
     color: #646fd4;
@@ -58,7 +58,7 @@ export const BurgerMenu = styled.div`
     }
 
     .navbar-item {
-      margin: 1rem;
+      margin: 0.75rem;
     }
     .navbar-item:nth-last-child(1) {
       margin-right: 1rem;
@@ -91,7 +91,6 @@ export const MenuIcon = styled.div`
     }
 
     &:nth-child(2) {
-      transform: ${({ active }) => (active ? "display:none" : "display:block")};
       opacity: ${({ active }) => (active ? 0 : 1)};
     }
 

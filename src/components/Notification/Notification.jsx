@@ -2,15 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Notification.styles";
 
-const Notification = ({ handleClick, children }) => {
+const Notification = ({ children, handleClick }) => {
   return (
-    <S.Notification>
+    <S.Notification className="notification">
       {children}
-      {handleClick && (
-        <button className="delete" onClick={handleClick}>
-          X
-        </button>
-      )}
+      <S.RemoveButton className="delete" onClick={handleClick}>
+        X
+      </S.RemoveButton>
     </S.Notification>
   );
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionOneHome = styled.div`
-  .sectionOne-container {
+  .homeSectionContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -32,11 +32,6 @@ export const SectionOneHome = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    .sectionOne-container {
-      width: 90%;
-      margin: 10rem auto;
-      margin-bottom: 4rem;
-    }
     .imgContainer {
       width: 70%;
     }

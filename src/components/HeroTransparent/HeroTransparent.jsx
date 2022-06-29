@@ -1,23 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as S from "./Hero.styles";
+import * as S from "./HeroTransparent.styles";
 
-const Hero = ({ title, subtitle, children }) => {
+const HeroTransparent = ({ title, subtitle, children }) => {
   return (
-    <S.Hero className="hero">
+    <S.HeroTransparent className="hero">
       <div className="hero-body">
         <h1 className="title">{title}</h1>
         <p className="subtitle">{subtitle}</p>
       </div>
       {children}
-    </S.Hero>
+    </S.HeroTransparent>
   );
 };
 
-Hero.propTypes = {
+HeroTransparent.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  children: PropTypes.node,
 };
 
-export default Hero;
+export default HeroTransparent;
