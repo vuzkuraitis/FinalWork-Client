@@ -12,59 +12,61 @@ const AddExerciseForm = ({ handleSubmit, exercises }) => {
     <>
       <Hero title="Add Workout" />
       <Section>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
+        <div className="formSection">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
 
-            handleSubmit(exerciseValues);
-            console.log(exerciseValues);
-          }}
-        >
-          <SelectInput
-            options={exercises}
-            label="Exercise"
-            type="number"
-            name="exc"
-            handleChange={(exercise_idValue) =>
-              updateExerciseValues({
-                ...exerciseValues,
-                exercise_id: exercise_idValue,
-              })
-            }
-          />
+              handleSubmit(exerciseValues);
+              console.log(exerciseValues);
+            }}
+          >
+            <SelectInput
+              options={exercises}
+              label="Exercise"
+              type="number"
+              name="exc"
+              handleChange={(exercise_idValue) =>
+                updateExerciseValues({
+                  ...exerciseValues,
+                  exercise_id: exercise_idValue,
+                })
+              }
+            />
 
-          <TextInput
-            type="number"
-            label="Weight"
-            placeholder="Weight"
-            handleChange={(weightValue) =>
-              updateExerciseValues({ ...exerciseValues, weight: weightValue })
-            }
-          />
-          <TextInput
-            type="number"
-            label="Reps"
-            placeholder="Reps"
-            handleChange={(repsValue) =>
-              updateExerciseValues({
-                ...exerciseValues,
-                reps: repsValue,
-              })
-            }
-          />
-          <TextInput
-            type="number"
-            label="Sets"
-            placeholder="Sets"
-            handleChange={(setsValue) =>
-              updateExerciseValues({
-                ...exerciseValues,
-                sets: setsValue,
-              })
-            }
-          />
-          <Button type="submit">Add Exercise</Button>
-        </form>
+            <TextInput
+              type="number"
+              label="Weight"
+              placeholder="Weight"
+              handleChange={(weightValue) =>
+                updateExerciseValues({ ...exerciseValues, weight: weightValue })
+              }
+            />
+            <TextInput
+              type="number"
+              label="Reps"
+              placeholder="Reps"
+              handleChange={(repsValue) =>
+                updateExerciseValues({
+                  ...exerciseValues,
+                  reps: repsValue,
+                })
+              }
+            />
+            <TextInput
+              type="number"
+              label="Sets"
+              placeholder="Sets"
+              handleChange={(setsValue) =>
+                updateExerciseValues({
+                  ...exerciseValues,
+                  sets: setsValue,
+                })
+              }
+            />
+            <Button type="submit">Add Exercise</Button>
+          </form>
+        </div>
       </Section>
     </>
   );
