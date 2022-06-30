@@ -56,7 +56,7 @@ const Nav = () => {
         {links && (
           <S.BurgerMenu active={active}>
             {links.map((link) => (
-              <Link to={link.url} className="navbar-item">
+              <Link to={link.url} key={link.title} className="navbar-item">
                 {link.title}
               </Link>
             ))}

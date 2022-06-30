@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Greeting from "../components/Greeting/Greeting";
-import SectionOneHome from "../components/SectionOneHome/SectionOneHome";
+import Section from "../components/Section/Section";
 import SectionTwoHome from "../components/SectionTwoHome/SectionTwoHome";
 import HomeImageOne from "../assets/HomeImageOne.jpeg";
 import AddExerciseForm from "../components/AddExerciseForm/AddExerciseForm";
@@ -79,7 +79,7 @@ const Home = () => {
   // }
   return (
     <>
-      <SectionOneHome>
+      <Section>
         <div className="homeSectionContainer">
           {error && (
             <Notification handleClick={() => setError(null)}>
@@ -88,12 +88,16 @@ const Home = () => {
           )}
           {users &&
             users.map((user) => (
-              <Greeting name={user.name} className="greetingContainer">
+              <Greeting
+                name={user.name}
+                key={user.name}
+                className="greetingContainer"
+              >
                 {user.name}
               </Greeting>
             ))}
         </div>
-      </SectionOneHome>
+      </Section>
       <SectionTwoHome>
         <HeroTransparent>
           <h1>Today is {year}</h1>

@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import LoginForm from "../components/LoginForm/LoginForm";
 import Notification from "../components/Notification/Notification";
 import { useNavigate } from "react-router-dom";
-import SectionOne from "../components/SectionOne/SectionOne";
-import SectionOneImage from "../assets/SectionOne.png";
+import Section from "../components/Section/Section";
 import HeroSmall from "../components/HeroSmall/HeroSmall";
-import SectionTwo from "../components/SectionTwo/SectionTwo";
-import SectionThree from "../components/SectionThree/SectionThree";
 import CardList from "../components/CardList/CardList";
+import SectionOneImage from "../assets/SectionOne.png";
 import Card0 from "../assets/Card0.jpg";
 import Card1 from "../assets/Card1.jpeg";
 import Card2 from "../assets/Card2.jpeg";
@@ -61,28 +59,38 @@ const Login = () => {
   };
   return (
     <>
-      {error && <Notification>{error}</Notification>}
-      <SectionOne>
-        <div className="imgContainer">
-          <img
-            src={SectionOneImage}
-            alt="Hamburg Egi"
-            className="under-image"
-            width="500px"
-            height="350px"
-          />
-        </div>
+      <Section>
+        {error && (
+          <Notification handleClick={() => setError(null)}>
+            {error}
+          </Notification>
+        )}
+        <div className="sectioneOneLogin">
+          <div className="imgContainer">
+            <img
+              src={SectionOneImage}
+              alt="Hamburg Egi"
+              className="under-image"
+              width="500px"
+              height="350px"
+            />
+          </div>
 
-        <div className="loginContainer">
-          <LoginForm handleSubmit={loginUser}></LoginForm>
+          <div className="loginContainer">
+            <LoginForm handleSubmit={loginUser}></LoginForm>
+          </div>
         </div>
-      </SectionOne>
-      <SectionTwo>
-        <HeroSmall subtitle={heroSubtitle}></HeroSmall>
-      </SectionTwo>
-      <SectionThree>
-        <CardList products={products}></CardList>
-      </SectionThree>
+      </Section>
+      <Section>
+        <div className="sectionTwoLogin">
+          <HeroSmall subtitle={heroSubtitle}></HeroSmall>
+        </div>
+      </Section>
+      <Section>
+        <div className="sectionThreeLogin">
+          <CardList products={products}></CardList>
+        </div>
+      </Section>
     </>
   );
 };

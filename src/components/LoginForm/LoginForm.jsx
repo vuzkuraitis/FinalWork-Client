@@ -11,31 +11,33 @@ const LoginForm = ({ handleSubmit }) => {
     <>
       <Hero title="Personal Area" />
       <Section>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
+        <div className="formSection">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
 
-            handleSubmit(loginValues);
-          }}
-        >
-          <TextInput
-            type="email"
-            label="Email"
-            placeholder="email@email.com"
-            handleChange={(emailValue) =>
-              updateLoginValues({ ...loginValues, email: emailValue })
-            }
-          />
-          <TextInput
-            type="password"
-            label="Password"
-            placeholder="Password"
-            handleChange={(passwordValue) =>
-              updateLoginValues({ ...loginValues, password: passwordValue })
-            }
-          />
-          <Button type="submit">Login</Button>
-        </form>
+              handleSubmit(loginValues);
+            }}
+          >
+            <TextInput
+              type="email"
+              label="Email"
+              placeholder="email@email.com"
+              handleChange={(emailValue) =>
+                updateLoginValues({ ...loginValues, email: emailValue })
+              }
+            />
+            <TextInput
+              type="password"
+              label="Password"
+              placeholder="Password"
+              handleChange={(passwordValue) =>
+                updateLoginValues({ ...loginValues, password: passwordValue })
+              }
+            />
+            <Button type="submit">Login</Button>
+          </form>
+        </div>
       </Section>
     </>
   );

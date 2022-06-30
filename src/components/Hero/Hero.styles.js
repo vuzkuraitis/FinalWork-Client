@@ -12,4 +12,9 @@ export const Hero = styled.div`
   .subtitle {
     text-align: center;
   }
+  @media screen and (min-width: 1024px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;

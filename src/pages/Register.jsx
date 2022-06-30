@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Notification from "../components/Notification/Notification";
-import SectionOne from "../components/SectionOne/SectionOne";
+import Section from "../components/Section/Section";
 import BenefitsList from "../components/BenefitsList/BenefitsList";
 import Hero from "../components/Hero/Hero";
 
@@ -32,8 +32,12 @@ const Register = () => {
   };
   return (
     <>
-      <SectionOne>
-        {error && <Notification>{error}</Notification>}
+      <Section>
+        {error && (
+          <Notification handleClick={() => setError(null)}>
+            {error}
+          </Notification>
+        )}
         <div className="registerWrapper">
           <BenefitsList className="registrationBenefits">
             <Hero title="Why is better to be registered?" />
@@ -50,7 +54,7 @@ const Register = () => {
             <RegisterForm handleSubmit={registerUser}></RegisterForm>
           </div>
         </div>
-      </SectionOne>
+      </Section>
     </>
   );
 };

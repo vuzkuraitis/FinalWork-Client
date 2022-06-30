@@ -11,42 +11,44 @@ const RegisterForm = ({ handleSubmit }) => {
     <>
       <Hero title="Register" />
       <Section>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
+        <div className="formSection">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
 
-            handleSubmit(registerValues);
-          }}
-        >
-          <TextInput
-            type="text"
-            label="Name"
-            placeholder="Name"
-            handleChange={(nameValue) =>
-              updateRegisterValues({ ...registerValues, name: nameValue })
-            }
-          />
-          <TextInput
-            type="email"
-            label="Email"
-            placeholder="email@email.com"
-            handleChange={(emailValue) =>
-              updateRegisterValues({ ...registerValues, email: emailValue })
-            }
-          />
-          <TextInput
-            type="password"
-            label="Password"
-            placeholder="Password"
-            handleChange={(passwordValue) =>
-              updateRegisterValues({
-                ...registerValues,
-                password: passwordValue,
-              })
-            }
-          />
-          <Button type="submit">Register</Button>
-        </form>
+              handleSubmit(registerValues);
+            }}
+          >
+            <TextInput
+              type="text"
+              label="Name"
+              placeholder="Name"
+              handleChange={(nameValue) =>
+                updateRegisterValues({ ...registerValues, name: nameValue })
+              }
+            />
+            <TextInput
+              type="email"
+              label="Email"
+              placeholder="email@email.com"
+              handleChange={(emailValue) =>
+                updateRegisterValues({ ...registerValues, email: emailValue })
+              }
+            />
+            <TextInput
+              type="password"
+              label="Password"
+              placeholder="Password"
+              handleChange={(passwordValue) =>
+                updateRegisterValues({
+                  ...registerValues,
+                  password: passwordValue,
+                })
+              }
+            />
+            <Button type="submit">Register</Button>
+          </form>
+        </div>
       </Section>
     </>
   );
