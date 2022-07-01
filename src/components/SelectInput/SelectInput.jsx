@@ -16,6 +16,7 @@ const SelectInput = ({ label, name, type, options, id, handleChange }) => {
           id={name}
           onChange={(e) => handleChange(e.target.value)}
         >
+          <option>Please select a Workout</option>
           {options &&
             options.map((option) => (
               <option option={option.name} value={option.id} key={option.id}>

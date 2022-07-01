@@ -36,7 +36,7 @@ const AddExerciseForm = ({ handleSubmit, exercises }) => {
 
             <TextInput
               type="number"
-              label="Weight"
+              label="Weight Kg"
               placeholder="Weight"
               handleChange={(weightValue) =>
                 updateExerciseValues({ ...exerciseValues, weight: weightValue })

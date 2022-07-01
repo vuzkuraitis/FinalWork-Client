@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Greeting from "../components/Greeting/Greeting";
 import Section from "../components/Section/Section";
-import SectionTwoHome from "../components/SectionTwoHome/SectionTwoHome";
 import HomeImageOne from "../assets/HomeImageOne.jpeg";
 import AddExerciseForm from "../components/AddExerciseForm/AddExerciseForm";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import Hero from "../components/Hero/Hero";
+import Table from "../components/Table/Table";
 
 const Home = () => {
   const [users, setUsers] = useState();
   const [error, setError] = useState();
   const [selects, setSelects] = useState();
+  const [sets, setSets] = useState();
 
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
@@ -74,6 +75,23 @@ const Home = () => {
       return setError(err.message);
     }
   };
+  const getSets = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/sets/sets`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+
+    setSets(data);
+    console.log(data);
+  };
+  useEffect(() => {
+    getSets();
+  }, []);
   // if (!data) {
   //   <div>Loading...</div>;
   // }
@@ -98,31 +116,41 @@ const Home = () => {
             ))}
         </div>
       </Section>
-      <SectionTwoHome>
-        <HeroTransparent>
-          <h1>Today is {year}</h1>
-        </HeroTransparent>
+      <Section>
         <div className="homeSectionContainerData">
-          <div className="imgContainerHome">
-            <img
-              src={HomeImageOne}
-              alt="Hamburg Egi"
-              className="under-image"
-              width="500px"
-              height="350px"
-            />
+          <HeroTransparent>
+            <h1>Today is {year}</h1>
+          </HeroTransparent>
+          <div className="homeSectionContainerAdd">
+            <div className="imgContainer">
+              <img
+                src={HomeImageOne}
+                alt="Hamburg Egi"
+                className="under-image"
+                width="500px"
+                height="350px"
+              />
+            </div>
+            <div className="addExercise">
+              <AddExerciseForm
+                handleSubmit={addExercise}
+                exercises={selects}
+              ></AddExerciseForm>
+            </div>
           </div>
-          <div className="addExercise">
-            <AddExerciseForm
-              handleSubmit={addExercise}
-              exercises={selects}
-            ></AddExerciseForm>
+          <div className="homeBottom">
+            <Hero subtitle={subtitle}></Hero>
           </div>
         </div>
-        <div className="homeBottom">
-          <Hero subtitle={subtitle}></Hero>
+      </Section>
+      <Section>
+        <div className="homeSectionData">
+          <HeroTransparent title="Your previous Workouts"></HeroTransparent>
+          <div className="homeTable">
+            <Table options={sets}></Table>
+          </div>
         </div>
-      </SectionTwoHome>
+      </Section>
     </>
   );
 };

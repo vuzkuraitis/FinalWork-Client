@@ -6,7 +6,7 @@ const Greeting = ({ name, className }) => {
   return (
     <S.Greeting className={className}>
       <h2>
-        Hello <span key={name}>{name}</span>,
+        Hello <span key={name}>{name}</span>
       </h2>
     </S.Greeting>
   );

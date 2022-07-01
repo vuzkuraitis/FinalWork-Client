@@ -69,6 +69,18 @@ export const Section = styled.div`
     margin-bottom: 0;
     width: 100%;
   }
+  .homeSectionContainerAdd {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .addExercise {
+    width: 100%;
+  }
+  .homeTable {
+    margin: 3rem 0;
+    width: 100%;
+  }
 
   @media screen and (min-width: 768px) {
     .sectionTwoLogin {
@@ -97,10 +109,31 @@ export const Section = styled.div`
     .registerContainer {
       width: 45%;
     }
+    .homeSectionContainerData {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .addExercise {
+      width: 25%;
+    }
+    .homeSectionContainerAdd {
+      margin: 3rem 0;
+      justify-content: space-between;
+    }
+    .homeBottom {
+      margin-bottom: 3rem;
+    }
+    .homeSectionData {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
   @media screen and (min-width: 1201px) {
     .imgContainer {
       width: 60%;
+    }
+    .addExercise {
+      width: 30%;
     }
     .loginContainer {
       width: 35%;
