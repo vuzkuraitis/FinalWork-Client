@@ -85,7 +85,14 @@ export const Section = styled.div`
   .priceBottom {
     margin-bottom: 3rem;
   }
-
+  /* ChangePass */
+  .changePassSectionContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .changePassContainer {
+    width: 100%;
+  }
   @media screen and (min-width: 768px) {
     .sectionTwoLogin {
       width: 90%;
@@ -93,7 +100,7 @@ export const Section = styled.div`
     }
     .sectioneOneLogin {
       width: 90%;
-      margin: 10rem auto;
+      margin: 3rem auto;
       margin-bottom: 4rem;
     }
     .sectionThreeLogin {
@@ -114,7 +121,8 @@ export const Section = styled.div`
       width: 45%;
     }
     .homeSectionContainerData,
-    .priceSectionContainerData {
+    .priceSectionContainerData,
+    .changeSectionContainerData {
       width: 90%;
       margin: 0 auto;
     }
@@ -137,13 +145,42 @@ export const Section = styled.div`
       margin: 3rem auto;
       width: 100%;
     }
+    .changePassSectionContainer {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem auto;
+    }
+    .changePassSectionContainer > .imgContainer {
+      width: 60%;
+    }
+    .changePassContainer {
+      width: 30%;
+    }
   }
   @media screen and (min-width: 1201px) {
+    width: 70%;
+    margin: 0 auto;
     .imgContainer {
       width: 60%;
     }
     .addExercise {
-      width: 30%;
+      width: 35%;
+    }
+    .addExercise > .section {
+      width: 100%;
+      margin: 0;
+    }
+    .changePassContainer > .section {
+      width: 100%;
+      margin: 0;
+    }
+    .loginContainer > .section {
+      width: 100%;
+      margin: 0;
+    }
+    .registerContainer > .section {
+      width: 100%;
+      margin: 0;
     }
     .loginContainer {
       width: 35%;

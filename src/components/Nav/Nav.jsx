@@ -34,8 +34,8 @@ const Nav = () => {
       title: "Add Exercise",
     },
     {
-      url: "/",
-      title: "Add Workout",
+      url: "/changepass",
+      title: "Password",
     },
   ];
 
@@ -56,7 +56,12 @@ const Nav = () => {
         {links && (
           <S.BurgerMenu active={active}>
             {links.map((link) => (
-              <Link to={link.url} key={link.title} className="navbar-item">
+              <Link
+                to={link.url}
+                key={link.title}
+                className="navbar-item"
+                onClick={() => setActive(null)}
+              >
                 {link.title}
               </Link>
             ))}

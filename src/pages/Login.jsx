@@ -60,11 +60,15 @@ const Login = () => {
   return (
     <>
       <Section>
-        {error && (
-          <Notification handleClick={() => setError(null)}>
-            {error}
-          </Notification>
-        )}
+        <div className="homeSectionContainer">
+          {error && (
+            <Notification handleClick={() => setError(null)}>
+              {error}
+            </Notification>
+          )}
+        </div>
+      </Section>
+      <Section>
         <div className="sectioneOneLogin">
           <div className="imgContainer">
             <img

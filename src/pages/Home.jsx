@@ -14,10 +14,18 @@ const Home = () => {
   const [selects, setSelects] = useState();
   const [sets, setSets] = useState();
 
+  const [dt, setDt] = useState(new Date().toLocaleString());
+
+  useEffect(() => {
+    let secTimer = setInterval(() => {
+      setDt(new Date().toLocaleString());
+    }, 1000);
+
+    return () => clearInterval(secTimer);
+  }, []);
+
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
-
-  const year = new Date().toDateString();
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/users`, {
@@ -147,7 +155,8 @@ const Home = () => {
       <Section>
         <div className="homeSectionContainerData">
           <HeroTransparent>
-            <h1>Today is {year}</h1>
+            <h1>Today is {dt.slice(0, 10)}</h1>
+            <h1>Local time: {dt.slice(11)}</h1>
           </HeroTransparent>
           <div className="homeSectionContainerAdd">
             <div className="imgContainer">
@@ -173,7 +182,9 @@ const Home = () => {
       </Section>
       <Section>
         <div className="homeSectionData">
-          <HeroTransparent title="Your previous Workouts"></HeroTransparent>
+          <HeroTransparent>
+            <h1>Your previous Workouts</h1>
+          </HeroTransparent>
           <div className="homeTable">
             <Table
               options={sets}

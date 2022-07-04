@@ -3,10 +3,11 @@ import Greeting from "../components/Greeting/Greeting";
 import Section from "../components/Section/Section";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
+import ChangePassForm from "../components/ChangePassForm/ChangePassForm";
+import ChangePass from "../assets/ChangePass.jpeg";
 import Hero from "../components/Hero/Hero";
-import CardListPrice from "../components/CardListPrice/CardListPrice";
 
-const Home = () => {
+const Changepass = () => {
   const [users, setUsers] = useState();
   const [error, setError] = useState();
 
@@ -20,35 +21,9 @@ const Home = () => {
     return () => clearInterval(secTimer);
   }, []);
 
-  const products = [
-    {
-      title: "Monthly subscription",
-      subtitle:
-        "A quality what you get is priceless. The effectivenes of Trainings are in the Highest Level.",
-      text: "8 Trainings",
-      price: "400€",
-    },
-    {
-      title: "3 Month subscription",
-      subtitle:
-        "During this amount of time you will learn a completely new lifestyle, which will help you to clear you mind and soul from a dauly routine.",
-      text: "24 Trainings",
-      price: "1100€",
-    },
-    {
-      title: "6 Month subscription",
-      subtitle:
-        "Not only you will set your mind and soul free, but also you will be invited into special Training Camps all over the world.",
-      text: "48 Trainings",
-      price: "2200€",
-    },
+  const subtitle = [
+    "Whenever you doubt - just do it. Same is with password, if you think you need to change it - do it!",
   ];
-
-  const subtitle = `"Hello, I'm Egi, I'm the main person and the face of "Hamburg Athletics".
-    I teach my clients boxing, Brazilian Jui Jutsu (BJJ), self-defense, athletics training and movement. I have more than 20 years of professional experience in individual and group training and I can say proudly: I have been called for this!
-    My mission is your potential through movement and i want you to overcome your previous capacities and open new ones.
-    Whether in personal training, at camps or in my workshops, my training concepts are 100% individually acknowledged to everyone.
-    I look forward to every opportunity that presents itself to give people a better quality of life."`;
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/users`, {
@@ -64,6 +39,30 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const changePassword = async (inputs) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/users/change-password`,
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        }
+      );
+      const data = await res.json();
+
+      if (data.err) {
+        return setError(data.err);
+      }
+      return setError("Password was changed Succesfully");
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
 
   return (
     <>
@@ -87,15 +86,27 @@ const Home = () => {
         </div>
       </Section>
       <Section>
-        <div className="priceSectionContainerData">
+        <div className="changeSectionContainerData">
           <HeroTransparent>
             <h1>Today is {dt.slice(0, 10)}</h1>
             <h1>Local time: {dt.slice(11)}</h1>
           </HeroTransparent>
-          <div className="priceSectionContainer">
-            <CardListPrice products={products}></CardListPrice>
+          <div className="changePassSectionContainer">
+            <div className="changePassContainer">
+              <ChangePassForm handleSubmit={changePassword}></ChangePassForm>
+            </div>
+
+            <div className="imgContainer">
+              <img
+                src={ChangePass}
+                alt="Hamburg Egi"
+                className="under-image"
+                width="500px"
+                height="350px"
+              />
+            </div>
           </div>
-          <div className="priceBottom">
+          <div className="homeBottom">
             <Hero subtitle={subtitle}></Hero>
           </div>
         </div>
@@ -104,4 +115,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Changepass;

@@ -47,7 +47,6 @@ export const BurgerMenu = styled.div`
     transform: ${({ active }) =>
       active ? "translateX(0)" : "translateX(100%)"};
     position: absolute;
-    transition: 0.3s ease-in-out;
     top: 6.4rem;
     left: 0;
     width: 100%;

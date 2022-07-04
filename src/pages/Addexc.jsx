@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Greeting from "../components/Greeting/Greeting";
 import Section from "../components/Section/Section";
-import Addexc from "../assets/Addexc.jpeg";
+import Addexcpic from "../assets/Addexcpic.jpeg";
 import AddFavExcForm from "../components/AddFavExcForm/AddFavExcForm";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import Hero from "../components/Hero/Hero";
 
-const Home = () => {
+const Addexc = () => {
   const [users, setUsers] = useState();
   const [error, setError] = useState();
   const [selects, setSelects] = useState();
 
+  const [dt, setDt] = useState(new Date().toLocaleString());
+
+  useEffect(() => {
+    let secTimer = setInterval(() => {
+      setDt(new Date().toLocaleString());
+    }, 1000);
+
+    return () => clearInterval(secTimer);
+  }, []);
+
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
-
-  const year = new Date().toDateString();
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/users`, {
@@ -97,12 +105,13 @@ const Home = () => {
       <Section>
         <div className="homeSectionContainerData">
           <HeroTransparent>
-            <h1>Today is {year}</h1>
+            <h1>Today is {dt.slice(0, 10)}</h1>
+            <h1>Local time: {dt.slice(11)}</h1>
           </HeroTransparent>
           <div className="homeSectionContainerAdd">
             <div className="imgContainer">
               <img
-                src={Addexc}
+                src={Addexcpic}
                 alt="Hamburg Egi"
                 className="under-image"
                 width="500px"
@@ -122,4 +131,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Addexc;

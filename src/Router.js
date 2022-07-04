@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Addexc from "./pages/Addexc";
 import Prices from "./pages/Prices";
+import Changepass from "./pages/Changepass";
 
 const Router = () => {
   return (
@@ -35,6 +36,13 @@ const Router = () => {
           path="/prices"
           element={
             localStorage.getItem("token") ? <Prices /> : <Navigate to="/" />
+          }
+        />
+        <Route
+          exact
+          path="/changepass"
+          element={
+            localStorage.getItem("token") ? <Changepass /> : <Navigate to="/" />
           }
         />
       </Routes>

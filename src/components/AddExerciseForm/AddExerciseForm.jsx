@@ -6,7 +6,7 @@ import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
 import SelectInput from "../SelectInput/SelectInput";
 
-const AddExerciseForm = ({ handleSubmit, exercises }) => {
+const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
   const [exerciseValues, updateExerciseValues] = useState();
   return (
     <>

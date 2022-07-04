@@ -8,6 +8,10 @@ export const HeroTransparent = styled.div`
   h1 {
     font-size: 1rem;
   }
+  .hero-body {
+    display: flex;
+    justify-content: space-between;
+  }
   @media screen and (min-width: 768px) {
     background: #787a91;
     color: #ffffff;

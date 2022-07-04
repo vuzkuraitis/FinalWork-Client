@@ -33,12 +33,16 @@ const Register = () => {
   return (
     <>
       <Section>
-        <div className="registerWrapper">
+        <div className="homeSectionContainer">
           {error && (
             <Notification handleClick={() => setError(null)}>
               {error}
             </Notification>
           )}
+        </div>
+      </Section>
+      <Section>
+        <div className="registerWrapper">
           <BenefitsList className="registrationBenefits">
             <Hero title="Why is better to be registered?" />
             <ul>
