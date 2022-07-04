@@ -6,6 +6,8 @@ import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Addexc from "./pages/Addexc";
+import Prices from "./pages/Prices";
 
 const Router = () => {
   return (
@@ -19,6 +21,20 @@ const Router = () => {
           path="/home"
           element={
             localStorage.getItem("token") ? <Home /> : <Navigate to="/" />
+          }
+        />
+        <Route
+          exact
+          path="/addexc"
+          element={
+            localStorage.getItem("token") ? <Addexc /> : <Navigate to="/" />
+          }
+        />
+        <Route
+          exact
+          path="/prices"
+          element={
+            localStorage.getItem("token") ? <Prices /> : <Navigate to="/" />
           }
         />
       </Routes>

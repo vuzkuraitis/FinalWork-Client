@@ -15,6 +15,7 @@ const LoginForm = ({ handleSubmit }) => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              e.target.reset();
 
               handleSubmit(loginValues);
             }}

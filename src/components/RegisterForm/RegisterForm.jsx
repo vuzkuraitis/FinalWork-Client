@@ -15,6 +15,7 @@ const RegisterForm = ({ handleSubmit }) => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              e.target.reset();
 
               handleSubmit(registerValues);
             }}
@@ -24,7 +25,16 @@ const RegisterForm = ({ handleSubmit }) => {
               label="Name"
               placeholder="Name"
               handleChange={(nameValue) =>
-                updateRegisterValues({ ...registerValues, name: nameValue })
+                updateRegisterValues({
+                  ...registerValues,
+                  name: nameValue
+                    .split()
+                    .map(
+                      (e) =>
+                        e.charAt(0).toUpperCase() + e.substring(1).toLowerCase()
+                    )
+                    .toString(),
+                })
               }
             />
             <TextInput

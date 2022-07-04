@@ -26,11 +26,11 @@ const Nav = () => {
       title: "Home",
     },
     {
-      url: "/",
+      url: "/prices",
       title: "Prices",
     },
     {
-      url: "/",
+      url: "/addexc",
       title: "Add Exercise",
     },
     {

@@ -16,6 +16,7 @@ const AddExerciseForm = ({ handleSubmit, exercises }) => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              e.target.reset();
 
               handleSubmit(exerciseValues);
               console.log(exerciseValues);

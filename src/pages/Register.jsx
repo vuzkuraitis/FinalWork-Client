@@ -33,12 +33,12 @@ const Register = () => {
   return (
     <>
       <Section>
-        {error && (
-          <Notification handleClick={() => setError(null)}>
-            {error}
-          </Notification>
-        )}
         <div className="registerWrapper">
+          {error && (
+            <Notification handleClick={() => setError(null)}>
+              {error}
+            </Notification>
+          )}
           <BenefitsList className="registrationBenefits">
             <Hero title="Why is better to be registered?" />
             <ul>

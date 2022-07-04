@@ -78,8 +78,12 @@ export const Section = styled.div`
     width: 100%;
   }
   .homeTable {
-    margin: 3rem 0;
-    width: 100%;
+    margin: 3rem auto;
+    width: 90%;
+  }
+  /* Price */
+  .priceBottom {
+    margin-bottom: 3rem;
   }
 
   @media screen and (min-width: 768px) {
@@ -109,7 +113,8 @@ export const Section = styled.div`
     .registerContainer {
       width: 45%;
     }
-    .homeSectionContainerData {
+    .homeSectionContainerData,
+    .priceSectionContainerData {
       width: 90%;
       margin: 0 auto;
     }
@@ -120,12 +125,17 @@ export const Section = styled.div`
       margin: 3rem 0;
       justify-content: space-between;
     }
-    .homeBottom {
+    .homeBottom,
+    .priceBottom {
       margin-bottom: 3rem;
     }
     .homeSectionData {
       width: 90%;
       margin: 0 auto;
+    }
+    .homeTable {
+      margin: 3rem auto;
+      width: 100%;
     }
   }
   @media screen and (min-width: 1201px) {
