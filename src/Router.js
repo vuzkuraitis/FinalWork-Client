@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 
@@ -17,34 +17,10 @@ const Router = () => {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-        <Route
-          exact
-          path="/home"
-          element={
-            localStorage.getItem("token") ? <Home /> : <Navigate to="/" />
-          }
-        />
-        <Route
-          exact
-          path="/addexc"
-          element={
-            localStorage.getItem("token") ? <Addexc /> : <Navigate to="/" />
-          }
-        />
-        <Route
-          exact
-          path="/prices"
-          element={
-            localStorage.getItem("token") ? <Prices /> : <Navigate to="/" />
-          }
-        />
-        <Route
-          exact
-          path="/changepass"
-          element={
-            localStorage.getItem("token") ? <Changepass /> : <Navigate to="/" />
-          }
-        />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/addexc" element={<Addexc />} />
+        <Route exact path="/prices" element={<Prices />} />
+        <Route exact path="/changepass" element={<Changepass />} />
       </Routes>
       <Footer />
     </BrowserRouter>

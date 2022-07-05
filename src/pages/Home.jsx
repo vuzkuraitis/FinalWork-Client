@@ -14,16 +14,6 @@ const Home = () => {
   const [selects, setSelects] = useState();
   const [sets, setSets] = useState();
 
-  const [dt, setDt] = useState(new Date().toLocaleString());
-
-  useEffect(() => {
-    let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleString());
-    }, 1000);
-
-    return () => clearInterval(secTimer);
-  }, []);
-
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
 
@@ -120,6 +110,16 @@ const Home = () => {
   };
   useEffect(() => {
     getSets();
+  }, []);
+
+  const [dt, setDt] = useState(new Date().toLocaleString());
+
+  useEffect(() => {
+    let secTimer = setInterval(() => {
+      setDt(new Date().toLocaleString());
+    }, 1000);
+
+    return () => clearInterval(secTimer);
   }, []);
 
   // if (!data) {
