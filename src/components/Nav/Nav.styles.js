@@ -16,9 +16,9 @@ export const Nav = styled.div`
     height: 3rem;
   }
   .navbarWrapper {
-    width: 90%;
-    justify-content: space-between;
     display: flex;
+    justify-content: space-between;
+    width: 90%;
   }
 `;
 

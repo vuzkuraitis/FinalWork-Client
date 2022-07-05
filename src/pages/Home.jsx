@@ -36,7 +36,6 @@ const Home = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
   useEffect(() => {
     getData();
@@ -54,7 +53,6 @@ const Home = () => {
     const data = await res.json();
 
     setSelects(data);
-    console.log(data);
   };
   useEffect(() => {
     getSelection();
@@ -74,7 +72,6 @@ const Home = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
       if (data.err) {
         return setError(data.err);
       }
@@ -98,7 +95,6 @@ const Home = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
       if (data.err) {
         return setError(data.err);
       }
@@ -121,7 +117,6 @@ const Home = () => {
     const data = await res.json();
 
     setSets(data);
-    console.log(data);
   };
   useEffect(() => {
     getSets();
@@ -186,13 +181,17 @@ const Home = () => {
             <h1>Your previous Workouts</h1>
           </HeroTransparent>
           <div className="homeTable">
-            <Table
-              options={sets}
-              handleSubmit={(e) => {
-                removeExercise(Number(e.currentTarget.value));
-                console.log(Number(e.currentTarget.value));
-              }}
-            ></Table>
+            {sets && sets.length === 0 && (
+              <div className="nodata">No previous workouts detected...</div>
+            )}
+            {sets && sets.length > 0 && (
+              <Table
+                options={sets}
+                handleSubmit={(e) => {
+                  removeExercise(Number(e.currentTarget.value));
+                }}
+              ></Table>
+            )}
           </div>
         </div>
       </Section>

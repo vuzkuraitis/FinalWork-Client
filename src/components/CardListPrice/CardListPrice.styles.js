@@ -16,8 +16,8 @@ export const CardListPrice = styled.div`
 
 export const CardItem = styled(CardPrice)`
   box-sizing: border-box;
-  width: 100%;
   margin-bottom: 3rem;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     width: 45%;

@@ -9,11 +9,11 @@ export const Card = styled.div`
 
 export const Image = styled.img`
   border-bottom: 0.125rem solid #bbbbbb;
-  max-width: 100%;
   display: block;
+  height: auto;
+  max-width: 100%;
   opacity: 1;
   width: 100%;
-  height: auto;
 
   &:hover {
     opacity: 0.5;

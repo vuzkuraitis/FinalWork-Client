@@ -6,30 +6,31 @@ export const Section = styled.div`
   .sectioneOneLogin {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 6.5rem auto;
-    margin-bottom: 3rem;
     font-family: "Roboto", sans-serif;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    margin: auto;
     width: 100%;
+    z-index: 1;
   }
   .imgContainer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     height: auto;
+    position: relative;
     width: 100%;
     img {
       display: block;
     }
   }
   .under-image {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .loginContainer {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .formSection {
     margin: 0 auto;
@@ -43,14 +44,13 @@ export const Section = styled.div`
   .registerWrapper {
     display: flex;
     flex-wrap: wrap;
+    height: auto;
     justify-content: space-between;
     width: 100%;
-    height: auto;
-    margin-top: 6.5rem;
   }
   .registerContainer {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .registrationBenefits {
     width: 100%;
@@ -81,6 +81,14 @@ export const Section = styled.div`
     margin: 3rem auto;
     width: 90%;
   }
+  .homeTable > .nodata {
+    color: #787a91;
+    padding: 1rem;
+  }
+  .favExercises > .nodata {
+    color: #787a91;
+    padding: 1rem;
+  }
   /* Price */
   .priceBottom {
     margin-bottom: 3rem;
@@ -95,13 +103,13 @@ export const Section = styled.div`
   }
   @media screen and (min-width: 768px) {
     .sectionTwoLogin {
-      width: 90%;
       margin: 0 auto;
+      width: 90%;
     }
     .sectioneOneLogin {
-      width: 90%;
-      margin: 3rem auto;
       margin-bottom: 4rem;
+      margin: 3rem auto;
+      width: 90%;
     }
     .sectionThreeLogin {
       width: 90%;
@@ -113,8 +121,8 @@ export const Section = styled.div`
       width: 25%;
     }
     .registerWrapper {
-      width: 90%;
       margin: 15rem auto;
+      width: 90%;
     }
     .registrationBenefits,
     .registerContainer {
@@ -123,23 +131,27 @@ export const Section = styled.div`
     .homeSectionContainerData,
     .priceSectionContainerData,
     .changeSectionContainerData {
-      width: 90%;
       margin: 0 auto;
+      width: 90%;
     }
     .addExercise {
       width: 25%;
     }
     .homeSectionContainerAdd {
-      margin: 3rem 0;
       justify-content: space-between;
+      margin: 3rem 0;
     }
     .homeBottom,
     .priceBottom {
       margin-bottom: 3rem;
     }
     .homeSectionData {
-      width: 90%;
       margin: 0 auto;
+      width: 90%;
+    }
+    .homeTable > .nodata {
+      color: #787a91;
+      margin: 1rem 0;
     }
     .homeTable {
       margin: 3rem auto;
@@ -156,10 +168,14 @@ export const Section = styled.div`
     .changePassContainer {
       width: 30%;
     }
+    .favExercises > .nodata {
+      color: #787a91;
+      margin: 1rem 0;
+    }
   }
   @media screen and (min-width: 1201px) {
-    width: 70%;
     margin: 0 auto;
+    width: 70%;
     .imgContainer {
       width: 60%;
     }
@@ -167,20 +183,20 @@ export const Section = styled.div`
       width: 35%;
     }
     .addExercise > .section {
-      width: 100%;
       margin: 0;
+      width: 100%;
     }
     .changePassContainer > .section {
-      width: 100%;
       margin: 0;
+      width: 100%;
     }
     .loginContainer > .section {
-      width: 100%;
       margin: 0;
+      width: 100%;
     }
     .registerContainer > .section {
-      width: 100%;
       margin: 0;
+      width: 100%;
     }
     .loginContainer {
       width: 35%;

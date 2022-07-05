@@ -5,7 +5,7 @@ import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import ChangePassForm from "../components/ChangePassForm/ChangePassForm";
 import ChangePass from "../assets/ChangePass.jpeg";
-import Hero from "../components/Hero/Hero";
+import HeroSmall from "../components/HeroSmall/HeroSmall";
 
 const Changepass = () => {
   const [users, setUsers] = useState();
@@ -34,7 +34,6 @@ const Changepass = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
   useEffect(() => {
     getData();
@@ -107,7 +106,9 @@ const Changepass = () => {
             </div>
           </div>
           <div className="homeBottom">
-            <Hero subtitle={subtitle}></Hero>
+            <HeroSmall>
+              <p>{subtitle}</p>
+            </HeroSmall>
           </div>
         </div>
       </Section>

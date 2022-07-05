@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const HeroSmall = styled.div`
-  font-family: "Roboto", sans-serif;
-  text-align: center;
   background: #787a91;
   color: #ffffff;
-  padding: 1rem;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
 `;

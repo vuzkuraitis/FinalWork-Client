@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
-export const Table = styled.table`
+export const List = styled.div`
   border-collapse: collapse;
   font-size: 0.75rem;
-  padding: 0 1rem 3rem 1rem;
-  text-align: center;
   width: 100%;
-  tr {
-    font-weight: bolder;
+
+  ul {
+    padding: 0 1rem;
   }
-  th {
-    background: #787a91;
-    color: #ffffff;
+  .listItem {
+    border-bottom: 1px solid #787a91;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0.5rem 0;
   }
-  tr > th,
-  td {
-    border: 1px solid #787a91;
-    padding: 1rem 0;
+
+  li:nth-last-child(1) {
+    border-bottom: none;
   }
   .delete {
     background: transparent;
@@ -27,6 +28,7 @@ export const Table = styled.table`
     color: #ffffff;
     padding: 0.5rem;
   }
+
   @media screen and (min-width: 481px) {
     font-size: 1rem;
   }

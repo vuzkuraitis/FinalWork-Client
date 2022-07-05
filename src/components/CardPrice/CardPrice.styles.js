@@ -7,21 +7,21 @@ export const CardPrice = styled.div`
   text-align: center;
 
   h2 {
-    padding: 3rem 0 3rem 0;
     border-bottom: 1px solid #bbbbbb;
     margin: 0 auto;
+    padding: 3rem 0 3rem 0;
     width: 50%;
   }
   p {
-    padding: 3rem 0 3rem 0;
     border-bottom: 1px solid #bbbbbb;
     margin: 0 auto;
+    padding: 3rem 0 3rem 0;
     width: 50%;
   }
   h3 {
-    padding: 3rem 0 3rem 0;
     border-bottom: 1px solid #bbbbbb;
     margin: 0 auto;
+    padding: 3rem 0 3rem 0;
     width: 50%;
 
     :last-child {

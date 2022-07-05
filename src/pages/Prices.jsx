@@ -59,7 +59,6 @@ const Home = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
   useEffect(() => {
     getData();

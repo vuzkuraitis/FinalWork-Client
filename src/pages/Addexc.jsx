@@ -6,6 +6,7 @@ import AddFavExcForm from "../components/AddFavExcForm/AddFavExcForm";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import Hero from "../components/Hero/Hero";
+import List from "../components/List/List";
 
 const Addexc = () => {
   const [users, setUsers] = useState();
@@ -34,7 +35,6 @@ const Addexc = () => {
     const data = await res.json();
 
     setUsers(data);
-    console.log(data);
   };
   useEffect(() => {
     getData();
@@ -52,11 +52,34 @@ const Addexc = () => {
     const data = await res.json();
 
     setSelects(data);
-    console.log(data);
   };
   useEffect(() => {
     getSelection();
   }, []);
+
+  const removeExercise = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/exercises/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(),
+        }
+      );
+      const data = await res.json();
+      if (data.err) {
+        return setError(data.err);
+      }
+      getSelection();
+      return setError("Succesfully removed a Workout");
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
 
   const addExercise = async (inputs) => {
     try {
@@ -72,7 +95,7 @@ const Addexc = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
+      getSelection();
       if (data.err) {
         return setError(data.err);
       }
@@ -124,6 +147,22 @@ const Addexc = () => {
           </div>
           <div className="homeBottom">
             <Hero subtitle={subtitle}></Hero>
+          </div>
+          <div className="favExercises">
+            <HeroTransparent>
+              <h1>Favourite Exercises</h1>
+            </HeroTransparent>
+            {selects && selects.length === 0 && (
+              <div className="nodata">No Favourite Exercises detected...</div>
+            )}
+            {selects && selects.length > 0 && (
+              <List
+                options={selects}
+                handleSubmit={(e) => {
+                  removeExercise(Number(e.currentTarget.value));
+                }}
+              ></List>
+            )}
           </div>
         </div>
       </Section>

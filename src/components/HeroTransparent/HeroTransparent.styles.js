@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HeroTransparent = styled.div`
-  font-family: "Roboto", sans-serif;
   background: transparent;
   color: #787a91;
+  font-family: "Roboto", sans-serif;
   padding: 1rem;
   h1 {
     font-size: 1rem;

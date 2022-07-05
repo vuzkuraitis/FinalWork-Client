@@ -18,7 +18,6 @@ const AddFavExcForm = ({ handleSubmit }) => {
               e.target.reset();
 
               handleSubmit(exerciseValues);
-              console.log(exerciseValues);
             }}
           >
             <TextInput
