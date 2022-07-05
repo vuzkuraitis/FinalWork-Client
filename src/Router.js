@@ -17,13 +17,7 @@ const Router = () => {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-        <Route
-          exact
-          path="/home"
-          element={
-            localStorage.getItem("token") ? <Home /> : <Navigate to="/" />
-          }
-        />
+        <Route exact path="/home" element={<Home />} />
         <Route
           exact
           path="/addexc"
