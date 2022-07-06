@@ -87,8 +87,7 @@ const Changepass = () => {
       <Section>
         <div className="changeSectionContainerData">
           <HeroTransparent>
-            <h1>Today is {dt.slice(0, 10)}</h1>
-            <h1>Local time: {dt.slice(11)}</h1>
+            <h1>Local time: {dt}</h1>
           </HeroTransparent>
           <div className="changePassSectionContainer">
             <div className="changePassContainer">
