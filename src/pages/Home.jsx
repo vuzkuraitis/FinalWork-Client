@@ -112,11 +112,11 @@ const Home = () => {
     getSets();
   }, []);
 
-  const [dt, setDt] = useState(new Date().toLocaleString());
+  const [dt, setDt] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
     let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleString());
+      setDt(new Date().toLocaleTimeString());
     }, 1000);
 
     return () => clearInterval(secTimer);
@@ -146,8 +146,7 @@ const Home = () => {
       <Section>
         <div className="homeSectionContainerData">
           <HeroTransparent>
-            <h1>Today is {dt.slice(0, 10)}</h1>
-            <h1>Local time: {dt.slice(-8)}</h1>
+            <h1>Local time: {dt}</h1>
           </HeroTransparent>
           <div className="homeSectionContainerAdd">
             <div className="imgContainer">
