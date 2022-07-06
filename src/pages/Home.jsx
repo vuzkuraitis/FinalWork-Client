@@ -122,10 +122,6 @@ const Home = () => {
     return () => clearInterval(secTimer);
   }, []);
 
-  // if (!data) {
-  //   <div>Loading...</div>;
-  // }
-
   return (
     <>
       <Section>

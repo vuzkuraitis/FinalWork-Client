@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 
@@ -11,16 +11,33 @@ import Prices from "./pages/Prices";
 import Changepass from "./pages/Changepass";
 
 const Router = () => {
+  const token = localStorage.getItem("token");
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/addexc" element={<Addexc />} />
-        <Route exact path="/prices" element={<Prices />} />
-        <Route exact path="/changepass" element={<Changepass />} />
+        <Route
+          exact
+          path="/home"
+          element={{ token } ? <Home /> : <Navigate to="/" />}
+        />
+        <Route
+          exact
+          path="/addexc"
+          element={{ token } ? <Addexc /> : <Navigate to="/" />}
+        />
+        <Route
+          exact
+          path="/prices"
+          element={{ token } ? <Prices /> : <Navigate to="/" />}
+        />
+        <Route
+          exact
+          path="/changepass"
+          element={{ token } ? <Changepass /> : <Navigate to="/" />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
