@@ -65,7 +65,7 @@ export const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 6.5rem auto;
+    margin: 6.4rem auto;
     margin-bottom: 0;
     width: 100%;
   }
