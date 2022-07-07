@@ -25,7 +25,7 @@ const Register = () => {
       if (data.err) {
         return setError(data.err);
       }
-      return setError("Registration Succesful");
+      return setError("Registration Successful");
     } catch (err) {
       return setError(err.message);
     }

@@ -57,7 +57,7 @@ const Changepass = () => {
       if (data.err) {
         return setError(data.err);
       }
-      return setError("Password was changed Succesfully");
+      return setError("Password was changed Successfully");
     } catch (err) {
       return setError(err.message);
     }

@@ -75,7 +75,7 @@ const Addexc = () => {
         return setError(data.err);
       }
       getSelection();
-      return setError("Succesfully removed a Workout");
+      return setError("Succesfully removed an Exercise");
     } catch (err) {
       return setError(err.message);
     }
