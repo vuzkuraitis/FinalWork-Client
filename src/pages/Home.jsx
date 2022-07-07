@@ -112,11 +112,11 @@ const Home = () => {
     getSets();
   }, []);
 
-  const [dt, setDt] = useState(new Date().toLocaleTimeString());
+  const [dt, setDt] = useState(new Date().toLocaleTimeString("en-GB"));
 
   useEffect(() => {
     let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleTimeString());
+      setDt(new Date().toLocaleTimeString("en-GB"));
     }, 1000);
 
     return () => clearInterval(secTimer);
