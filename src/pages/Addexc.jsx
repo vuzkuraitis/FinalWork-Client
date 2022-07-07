@@ -13,11 +13,11 @@ const Addexc = () => {
   const [error, setError] = useState();
   const [selects, setSelects] = useState();
 
-  const [dt, setDt] = useState(new Date().toLocaleString("en-GB"));
+  const [dt, setDt] = useState(new Date().toLocaleTimeString("en-GB"));
 
   useEffect(() => {
     let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleString("en-GB"));
+      setDt(new Date().toLocaleTimeString("en-GB"));
     }, 1000);
 
     return () => clearInterval(secTimer);

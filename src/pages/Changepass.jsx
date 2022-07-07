@@ -11,11 +11,11 @@ const Changepass = () => {
   const [users, setUsers] = useState();
   const [error, setError] = useState();
 
-  const [dt, setDt] = useState(new Date().toLocaleString("en-GB"));
+  const [dt, setDt] = useState(new Date().toLocaleTimeString("en-GB"));
 
   useEffect(() => {
     let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleString("en-GB"));
+      setDt(new Date().toLocaleTimeString("en-GB"));
     }, 1000);
 
     return () => clearInterval(secTimer);
