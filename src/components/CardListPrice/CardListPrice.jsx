@@ -13,6 +13,7 @@ const CardListPrice = ({ products, index, title, subtitle, text }) => {
             subtitle={product.subtitle}
             text={product.text}
             price={product.price}
+            className="cardlistItem"
           />
         ))}
     </S.CardListPrice>

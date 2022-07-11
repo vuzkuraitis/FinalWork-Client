@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const List = styled.div`
   border-collapse: collapse;
+  color: #ffffff;
   font-size: 0.75rem;
   width: 100%;
 

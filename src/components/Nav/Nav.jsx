@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [active, setActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const publicLinks = [
     {
@@ -26,23 +27,28 @@ const Nav = () => {
       title: "Home",
     },
     {
-      url: "/prices",
-      title: "Prices",
-    },
-    {
-      url: "/addexc",
-      title: "Add Exercise",
-    },
-    {
-      url: "/changepass",
-      title: "Password",
+      url: "/settings",
+      title: "Settings",
     },
   ];
+
+  const changeBackground = () => {
+    if (window.scrollY >= 10) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
 
   const navigate = useNavigate();
   const links = localStorage.getItem("token") ? privateLinks : publicLinks;
   return (
-    <S.Nav className="navbar">
+    <S.Nav
+      scrolled={scrolled}
+      onScroll={() => setScrolled(!scrolled)}
+      className="navbar scrolled"
+    >
       <div className="navbarWrapper">
         <S.NavBrand>
           <img src={Logo} alt="Hamburg Athletics" />

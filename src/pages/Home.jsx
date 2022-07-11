@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Greeting from "../components/Greeting/Greeting";
 import Section from "../components/Section/Section";
-import HomeImageOne from "../assets/HomeImageOne.jpeg";
 import AddExerciseForm from "../components/AddExerciseForm/AddExerciseForm";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import Hero from "../components/Hero/Hero";
 import Table from "../components/Table/Table";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, EffectFade } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+import Home1 from "../assets/home1.jpeg";
+import Home2 from "../assets/home2.jpeg";
+import Home3 from "../assets/home3.jpeg";
+import Home4 from "../assets/home4.jpeg";
+import SectionOne from "../assets/SectionOne.png";
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -16,6 +25,8 @@ const Home = () => {
 
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
+
+  const photos = [Home1, Home2, Home3, Home4];
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/users`, {
@@ -112,16 +123,6 @@ const Home = () => {
     getSets();
   }, []);
 
-  const [dt, setDt] = useState(new Date().toLocaleTimeString("en-GB"));
-
-  useEffect(() => {
-    let secTimer = setInterval(() => {
-      setDt(new Date().toLocaleTimeString("en-GB"));
-    }, 1000);
-
-    return () => clearInterval(secTimer);
-  }, []);
-
   return (
     <>
       <Section>
@@ -131,6 +132,8 @@ const Home = () => {
               {error}
             </Notification>
           )}
+        </div>
+        <div className="homeSectionContainerData">
           {users &&
             users.map((user) => (
               <Greeting
@@ -141,28 +144,47 @@ const Home = () => {
                 {user.name}
               </Greeting>
             ))}
-        </div>
-      </Section>
-      <Section>
-        <div className="homeSectionContainerData">
-          <HeroTransparent>
-            <h1>Local time: {dt}</h1>
-          </HeroTransparent>
           <div className="homeSectionContainerAdd">
             <div className="imgContainer">
               <img
-                src={HomeImageOne}
+                src={SectionOne}
                 alt="Hamburg Egi"
                 className="under-image"
                 width="500px"
                 height="350px"
               />
             </div>
-            <div className="addExercise">
-              <AddExerciseForm
-                handleSubmit={addExercise}
-                exercises={selects}
-              ></AddExerciseForm>
+            <div className="addWrapper">
+              <div className="addExercise">
+                <AddExerciseForm
+                  handleSubmit={addExercise}
+                  exercises={selects}
+                ></AddExerciseForm>
+              </div>
+              <div className="homeswiper">
+                <Swiper
+                  modules={[Autoplay, Navigation, EffectFade]}
+                  // spaceBetween={50}
+                  navigation
+                  effect={"fade"}
+                  speed={600}
+                  autoplay={{
+                    delay: 1500,
+                    disableOnInteraction: false,
+                  }}
+                  slidesPerView={1}
+                  spaceBetween={0}
+                  // scrollbar={{ draggable: true }}
+                  loop={true}
+                  className="myswiper"
+                >
+                  {photos.map((photo) => (
+                    <SwiperSlide className="swiperslide">
+                      <img src={photo} alt="Egi" />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </div>
           <div className="homeBottom">

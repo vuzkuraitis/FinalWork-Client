@@ -21,9 +21,12 @@ export const CardItem = styled(CardPrice)`
 
   @media screen and (min-width: 768px) {
     width: 45%;
-
+    transition: transform 0.3s;
     :nth-child(3) {
       margin-right: 0;
+    }
+    :hover {
+      transform: scale(1.05);
     }
   }
   @media screen and (min-width: 1024px) {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  border: 0.125rem solid #bbbbbb;
+  color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 0.5rem;
   text-align: center;

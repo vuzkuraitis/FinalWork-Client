@@ -18,7 +18,6 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
               e.target.reset();
 
               handleSubmit(changepassValues);
-              console.log(changepassValues);
             }}
           >
             <TextInput

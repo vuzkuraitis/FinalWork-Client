@@ -16,6 +16,7 @@ export const Table = styled.table`
   tr > th,
   td {
     border: 1px solid #787a91;
+    color: #ffffff;
     padding: 1rem 0;
   }
   .delete {
@@ -26,6 +27,9 @@ export const Table = styled.table`
     background: #787a91;
     color: #ffffff;
     padding: 0.5rem;
+  }
+  .deleteIcon:hover {
+    cursor: pointer;
   }
   @media screen and (min-width: 481px) {
     font-size: 1rem;

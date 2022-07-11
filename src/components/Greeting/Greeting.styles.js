@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 export const Greeting = styled.div`
-  align-items: flex-end;
-  background: #787a91;
+  background: transparent;
   color: #ffffff;
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  width: 100%;
-
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 1rem;
   h2 {
     font-size: 0.75rem;
   }
@@ -19,10 +16,14 @@ export const Greeting = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    position: absolute;
     background: transparent;
-    color: #787a91;
     padding: 0;
+    left: 5%;
+    margin: 0;
+    top: 12%;
     width: 90%;
+    z-index: 1;
     h2 {
       font-size: 1rem;
     }

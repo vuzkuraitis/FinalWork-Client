@@ -6,7 +6,9 @@ export const TextInput = styled.div`
     flex-direction: column;
     font-family: "Roboto", sans-serif;
   }
-
+  .label {
+    color: #ffffff;
+  }
   input {
     border-radius: 0.25rem;
     border: 1px solid #bbbbbb;

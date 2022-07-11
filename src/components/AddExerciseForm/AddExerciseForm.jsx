@@ -8,6 +8,7 @@ import SelectInput from "../SelectInput/SelectInput";
 
 const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
   const [exerciseValues, updateExerciseValues] = useState();
+
   return (
     <>
       <Hero title="Add Workout" />
@@ -19,6 +20,7 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
               e.target.reset();
 
               handleSubmit(exerciseValues);
+              console.log(exerciseValues);
             }}
           >
             <SelectInput
@@ -36,6 +38,8 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
 
             <TextInput
               type="number"
+              min="0"
+              step="1"
               label="Weight Kg"
               placeholder="Weight"
               handleChange={(weightValue) =>
@@ -44,6 +48,8 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
             />
             <TextInput
               type="number"
+              min="0"
+              step="1"
               label="Reps"
               placeholder="Reps"
               handleChange={(repsValue) =>
@@ -55,6 +61,8 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
             />
             <TextInput
               type="number"
+              min="0"
+              step="1"
               label="Sets"
               placeholder="Sets"
               handleChange={(setsValue) =>

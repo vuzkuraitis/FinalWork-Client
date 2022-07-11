@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const Section = styled.div`
   /*Login*/
   font-family: "Roboto", sans-serif;
+
   .sectioneOneLogin {
+    background: #000000;
     display: flex;
     flex-wrap: wrap;
     font-family: "Roboto", sans-serif;
@@ -25,6 +27,12 @@ export const Section = styled.div`
     }
   }
   .under-image {
+    /* width: 500px;
+    height: 350px; */
+    height: auto;
+    width: 100%;
+  }
+  .under-video {
     height: auto;
     width: 100%;
   }
@@ -37,16 +45,58 @@ export const Section = styled.div`
     padding: 1rem;
   }
   .sectionThreeLogin {
+    width: 100%;
     margin: 3rem auto;
+    .myswiper {
+      width: 100%;
+      .swiperslide {
+          display: flex;
+          justify-content: center;
+          transform: translateZ(0);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+    }
   }
 
   /* Register */
+  .sectionOneRegister {
+    background: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Roboto", sans-serif;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative
+    width: 100%;
+    z-index: 1;
+  }
   .registerWrapper {
+    color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     height: auto;
     justify-content: space-between;
     width: 100%;
+  }
+  .imgRegContainer {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    position: relative;
+    width: 100%;
+    img {
+      display: block;
+    }
   }
   .registerContainer {
     height: auto;
@@ -69,6 +119,9 @@ export const Section = styled.div`
     margin-bottom: 0;
     width: 100%;
   }
+  .homeSectionContainerData {
+      width:100%;
+    }
   .homeSectionContainerAdd {
     display: flex;
     flex-wrap: wrap;
@@ -89,6 +142,27 @@ export const Section = styled.div`
     color: #787a91;
     padding: 1rem;
   }
+  .addWrapper {
+      display:flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .homeswiper {
+      width: 100%;
+      .myswiper {
+        width:100%;
+        .swiperslide {
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+      }
+    }
   /* Price */
   .priceBottom {
     margin-bottom: 3rem;
@@ -107,43 +181,138 @@ export const Section = styled.div`
       width: 90%;
     }
     .sectioneOneLogin {
+      position: relative
+      border: 0.25rem solid #242f9b;
+      border-radius: 1rem;
       margin-bottom: 4rem;
-      margin: 3rem auto;
-      width: 90%;
+      width: 100%;
     }
     .sectionThreeLogin {
       width: 90%;
+      .myswiper {
+        width: 100%;
+        height: 60vh;
+        .swiperslide {
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
     }
     .imgContainer {
-      width: 70%;
+      position:relative;
+      width: 100%;
     }
     .loginContainer {
+      background: rgba(0,0,0,0.5);
+      border-radius: 0.25rem;
+    }
+    .imgRegContainer {
+      position:relative;
+      width: 100%;
+    }
+    .overlay {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+  }
+    .sectionOneRegister {
+      margin-bottom: 4rem;
+      width: 100%;
+    }
+    .loginContainer, .registerContainer {
+      position: absolute;
+      top: 20%;
+      right: 8%;
       width: 25%;
+      .hero {
+        background: transparent;
+      }
     }
     .registerWrapper {
-      margin: 15rem auto;
+      position: absolute;
+      top: 20%;
+      left: 8%;
+      width: 50%;
+    }
+    .registrationBenefits {
+      width: 100%;
+    }
+    .registerWrapper > .registrationBenefits > .hero {
+      background: transparent;
+    }
+    .registrationBenefits > .hero > .hero-body > h1 {
+      font-size: 1.25rem;
+    }
+    .registrationBenefits > ul > li {
+      font-size: 0.75rem;
+    }
+    .registrationBenefits > ul > li:hover {
+      color: #646fd4;
+    }
+    .priceSectionContainer {
+      margin: 0 auto;
       width: 90%;
     }
-    .registrationBenefits,
-    .registerContainer {
-      width: 45%;
-    }
-    .homeSectionContainerData,
     .priceSectionContainerData,
     .changeSectionContainerData {
       margin: 0 auto;
       width: 90%;
     }
+    .priceSectionContainerData > .greetingContainer {
+      position: relative;
+      left: 0;
+      width: 100%;
+    }
+    .addWrapper {
+      align-items: center;
+      justify-content: space-between;
+      margin: 3rem auto;
+      width: 90%;
+    }
     .addExercise {
+      width: 35%;
+    }
+    .homeSectionContainerAdd > .addExercise {
+      position: absolute;
+      top: 20%;
+      right: 8%;
       width: 25%;
     }
-    .homeSectionContainerAdd {
-      justify-content: space-between;
-      margin: 3rem 0;
+    .addExercise > .hero {
+      background: transparent;
     }
-    .homeBottom,
+    .homeswiper {
+      width: 45%;
+      .myswiper {
+        width:100%
+        height: 50%;
+        .swiperslide {
+          img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .homeSectionContainerAdd {
+      position: relative;
+      justify-content: space-between;
+    }
+    .homeBottom{
+      width: 90%;
+      margin: 0 auto;
+    }
+
     .priceBottom {
-      margin-bottom: 3rem;
+      margin: 0 auto;
+      width: 90%;
     }
     .homeSectionData {
       margin: 0 auto;
@@ -166,7 +335,17 @@ export const Section = styled.div`
       width: 60%;
     }
     .changePassContainer {
-      width: 30%;
+      position: absolute;
+      top: 20%;
+      left: 8%;
+      width: 25%;
+    }
+    .changePassContainer > .hero {
+      background: transparent;
+    }
+    .favExercises {
+      width: 90%;
+      margin: 0 auto;
     }
     .favExercises > .nodata {
       color: #787a91;
@@ -174,32 +353,38 @@ export const Section = styled.div`
     }
   }
   @media screen and (min-width: 1201px) {
-    margin: 0 auto;
-    width: 70%;
-    .imgContainer {
+    /* margin: 0 auto;
+    width: 70%; */
+    /* .imgContainer {
       width: 60%;
-    }
-    .addExercise {
+    } */
+    /* .addExercise {
       width: 35%;
     }
     .addExercise > .section {
       margin: 0;
       width: 100%;
-    }
+    } */
     .changePassContainer > .section {
       margin: 0;
       width: 100%;
     }
-    .loginContainer > .section {
+    /* .loginContainer > .section {
       margin: 0;
       width: 100%;
-    }
+    } */
     .registerContainer > .section {
       margin: 0;
       width: 100%;
     }
-    .loginContainer {
-      width: 35%;
+    .registrationBenefits > .hero > .hero-body > h1 {
+      font-size: 2rem;
     }
+    .registrationBenefits > ul > li {
+      font-size: 1rem;
+    }
+    /* .loginContainer {
+      width: 35%;
+    } */
   }
 `;
