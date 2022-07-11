@@ -99,19 +99,22 @@ const Login = () => {
               alt="Hamburg Egi"
               className="under-image"
             /> */}
-            <div>
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                controls={false}
-                playsInline
-                preload="auto"
-                className="under-video"
-                src={BackVideo}
-                type="video/mp4"
-              />
-            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                          <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="auto"
+                          class="under-video"
+                          src=${BackVideo}
+                          type="video/mp4"
+                        />
+            `,
+              }}
+            ></div>
           </div>
           <div className="loginContainer">
             <LoginForm handleSubmit={loginUser}></LoginForm>
