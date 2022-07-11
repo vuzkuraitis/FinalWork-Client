@@ -101,11 +101,11 @@ const Login = () => {
             /> */}
             <div>
               <video
-                autoPlay
-                controls=""
-                loop
-                muted="true"
-                playsinline
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                controls={false}
+                playsInline
                 preload="auto"
                 className="under-video"
                 src={BackVideo}
