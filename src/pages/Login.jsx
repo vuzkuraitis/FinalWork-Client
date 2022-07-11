@@ -94,27 +94,16 @@ const Login = () => {
       <Section>
         <div className="sectioneOneLogin">
           <div className="imgContainer">
-            {/* <img
-              src={SectionOneImage}
-              alt="Hamburg Egi"
-              className="under-image"
-            /> */}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `
-                          <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          preload="auto"
-                          class="under-video"
-                          src=${BackVideo}
-                          type="video/mp4"
-                        />
-            `,
-              }}
-            ></div>
+            <video
+              width="100%"
+              loop
+              autoPlay
+              playsInline
+              muted
+              className="under-video"
+              src={BackVideo}
+              type="video/mp4"
+            />
           </div>
           <div className="loginContainer">
             <LoginForm handleSubmit={loginUser}></LoginForm>

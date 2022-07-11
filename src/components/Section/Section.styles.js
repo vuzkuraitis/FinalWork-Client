@@ -22,7 +22,7 @@ export const Section = styled.div`
     height: auto;
     position: relative;
     width: 100%;
-    img {
+    video {
       display: block;
     }
   }
