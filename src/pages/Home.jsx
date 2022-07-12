@@ -5,7 +5,6 @@ import AddExerciseForm from "../components/AddExerciseForm/AddExerciseForm";
 import Notification from "../components/Notification/Notification";
 import HeroTransparent from "../components/HeroTransparent/HeroTransparent";
 import Hero from "../components/Hero/Hero";
-import Table from "../components/Table/Table";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectFade } from "swiper";
 import "swiper/css";
@@ -16,6 +15,7 @@ import Home2 from "../assets/home2.jpeg";
 import Home3 from "../assets/home3.jpeg";
 import Home4 from "../assets/home4.jpeg";
 import SectionOne from "../assets/SectionOne.png";
+import CardList from "../components/CardList/CardList";
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -118,6 +118,7 @@ const Home = () => {
     const data = await res.json();
 
     setSets(data);
+    console.log(data);
   };
   useEffect(() => {
     getSets();
@@ -146,13 +147,7 @@ const Home = () => {
             ))}
           <div className="homeSectionContainerAdd">
             <div className="imgContainer">
-              <img
-                src={SectionOne}
-                alt="Hamburg Egi"
-                className="under-image"
-                width="500px"
-                height="350px"
-              />
+              <img src={SectionOne} alt="Hamburg Egi" className="under-image" />
             </div>
             <div className="addWrapper">
               <div className="addExercise">
@@ -202,12 +197,13 @@ const Home = () => {
               <div className="nodata">No previous workouts detected...</div>
             )}
             {sets && sets.length > 0 && (
-              <Table
+              <CardList
                 options={sets}
                 handleSubmit={(e) => {
                   removeExercise(Number(e.currentTarget.value));
+                  console.log(e.currentTarget.value);
                 }}
-              ></Table>
+              ></CardList>
             )}
           </div>
         </div>

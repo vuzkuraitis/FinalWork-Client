@@ -11,7 +11,7 @@ const List = ({ options, id, handleSubmit, type, handleChange }) => {
         {options &&
           options.map((option) => (
             <li option={option.name} key={option.id} className="listItem">
-              {option.name}{" "}
+              {option.name}
               <button
                 className="delete"
                 type="submit"

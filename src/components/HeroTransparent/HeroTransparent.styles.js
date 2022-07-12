@@ -6,7 +6,7 @@ export const HeroTransparent = styled.div`
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   h1 {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
   .hero-body {
     display: flex;
@@ -15,7 +15,7 @@ export const HeroTransparent = styled.div`
   @media screen and (min-width: 768px) {
     color: #ffffff;
     h1 {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
   }
 `;

@@ -18,16 +18,15 @@ export const Section = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
     position: relative;
     width: 100%;
     video {
       display: block;
     }
-  }
-  .under-image {
-    height: auto;
-    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .under-video {
     height: auto;
@@ -167,6 +166,21 @@ export const Section = styled.div`
     width: 100%;
   }
   @media screen and (min-width: 768px) {
+    .homeSectionContainerData > .homeSectionContainerAdd > .imgContainer {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    position: relative;
+    width: 100%;
+    video {
+      display: block;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
     .sectionTwoLogin {
       margin: 0 auto;
       width: 90%;

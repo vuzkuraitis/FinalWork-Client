@@ -10,6 +10,7 @@ export const List = styled.div`
     padding: 0 1rem;
   }
   .listItem {
+    align-items: center;
     border-bottom: 1px solid #787a91;
     display: flex;
     justify-content: space-between;
@@ -21,16 +22,12 @@ export const List = styled.div`
     border-bottom: none;
   }
   .delete {
-    background: transparent;
-    border: none;
-  }
-  .deleteIcon {
-    background: #787a91;
-    color: #ffffff;
-    padding: 0.5rem;
+    color: #ff8b8b;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: 768px) {
     font-size: 1rem;
   }
 `;
