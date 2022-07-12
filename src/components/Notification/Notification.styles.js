@@ -9,6 +9,7 @@ export const Notification = styled.div`
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   width: 100%;
+  z-index: 9999;
 `;
 export const RemoveButton = styled.button`
   border-radius: 50%;

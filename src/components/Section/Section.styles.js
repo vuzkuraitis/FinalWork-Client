@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Section = styled.div`
   /*Login*/
   font-family: "Roboto", sans-serif;
-
   .sectioneOneLogin {
     background: #000000;
     display: flex;
@@ -27,8 +26,6 @@ export const Section = styled.div`
     }
   }
   .under-image {
-    /* width: 500px;
-    height: 350px; */
     height: auto;
     width: 100%;
   }
@@ -65,7 +62,6 @@ export const Section = styled.div`
         }
     }
   }
-
   /* Register */
   .sectionOneRegister {
     background: #000000;
@@ -109,7 +105,6 @@ export const Section = styled.div`
       margin-right: 1rem;
     }
   }
-
   /* Home */
   .homeSectionContainer {
     display: flex;
@@ -168,10 +163,6 @@ export const Section = styled.div`
     margin-bottom: 3rem;
   }
   /* ChangePass */
-  .changePassSectionContainer {
-    display: flex;
-    flex-wrap: wrap;
-  }
   .changePassContainer {
     width: 100%;
   }
@@ -259,16 +250,6 @@ export const Section = styled.div`
       margin: 0 auto;
       width: 90%;
     }
-    .priceSectionContainerData,
-    .changeSectionContainerData {
-      margin: 0 auto;
-      width: 90%;
-    }
-    .priceSectionContainerData > .greetingContainer {
-      position: relative;
-      left: 0;
-      width: 100%;
-    }
     .addWrapper {
       align-items: center;
       justify-content: space-between;
@@ -309,7 +290,6 @@ export const Section = styled.div`
       width: 90%;
       margin: 0 auto;
     }
-
     .priceBottom {
       margin: 0 auto;
       width: 90%;
@@ -353,38 +333,11 @@ export const Section = styled.div`
     }
   }
   @media screen and (min-width: 1201px) {
-    /* margin: 0 auto;
-    width: 70%; */
-    /* .imgContainer {
-      width: 60%;
-    } */
-    /* .addExercise {
-      width: 35%;
-    }
-    .addExercise > .section {
-      margin: 0;
-      width: 100%;
-    } */
-    .changePassContainer > .section {
-      margin: 0;
-      width: 100%;
-    }
-    /* .loginContainer > .section {
-      margin: 0;
-      width: 100%;
-    } */
-    .registerContainer > .section {
-      margin: 0;
-      width: 100%;
-    }
     .registrationBenefits > .hero > .hero-body > h1 {
       font-size: 2rem;
     }
     .registrationBenefits > ul > li {
       font-size: 1rem;
     }
-    /* .loginContainer {
-      width: 35%;
-    } */
   }
 `;
