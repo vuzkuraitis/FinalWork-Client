@@ -86,11 +86,11 @@ export const Section = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
     position: relative;
     width: 100%;
     img {
-      display: block;
+      height: 100%;
+      width: 100%;
     }
   }
   .registerContainer {

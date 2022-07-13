@@ -11,13 +11,13 @@ export const CardList = styled.div`
     margin-bottom: 2rem;
 
     h4 {
-      border-bottom: 1px solid #ffffff;
       font-size: 1rem;
       padding-bottom: 1rem;
     }
   }
   .delete {
     color: #ff8b8b;
+    cursor: pointer;
     margin: 1rem auto;
     width: 30%;
   }
@@ -49,9 +49,14 @@ export const CardItem = styled(Card)`
     height: 8vh;
     margin: 1rem 0;
     text-align: center;
+    transition: ease 0.3s;
   }
   h4 > span {
     color: #ff8b8b;
     font-size: 2rem;
+  }
+  h4:hover {
+    box-shadow: 12px 11px 9px -2px rgba(0, 0, 0, 0.75);
+    transform: scale(1.2);
   }
 `;

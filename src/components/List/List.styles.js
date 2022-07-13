@@ -21,8 +21,16 @@ export const List = styled.div`
   li:nth-last-child(1) {
     border-bottom: none;
   }
+  li {
+    transition: ease 0.3s;
+  }
+  li:hover {
+    background: #ffffff;
+    color: #000000;
+  }
   .delete {
     color: #ff8b8b;
+    cursor: pointer;
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
