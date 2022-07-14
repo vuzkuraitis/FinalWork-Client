@@ -140,7 +140,7 @@ const Login = () => {
             className="myswiper"
           >
             {photos.map((photo) => (
-              <SwiperSlide className="swiperslide">
+              <SwiperSlide className="swiperslide" key={photo}>
                 <img src={photo} alt="Egi" />
               </SwiperSlide>
             ))}
