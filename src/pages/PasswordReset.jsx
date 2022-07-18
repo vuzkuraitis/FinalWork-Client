@@ -14,7 +14,7 @@ const PasswordReset = () => {
   const resetPassword = async (inputs) => {
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/users/reset-password`,
+        "https://monkfish-app-oz2c8.ondigitalocean.app/v1/users/reset-password",
         {
           method: "POST",
           headers: {
