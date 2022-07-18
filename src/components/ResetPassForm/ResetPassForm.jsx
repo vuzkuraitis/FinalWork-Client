@@ -5,12 +5,9 @@ import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
-import { useNavigate } from "react-router-dom";
 
 const ResetPassForm = ({ handleSubmit }) => {
   const [resetPassValues, updateResetPassValues] = useState();
-
-  const navigate = useNavigate();
 
   return (
     <S.ResetPassForm>
@@ -33,14 +30,7 @@ const ResetPassForm = ({ handleSubmit }) => {
                 updateResetPassValues({ ...resetPassValues, email: emailValue })
               }
             />
-            <Button
-              type="submit"
-              handleClick={() => {
-                navigate("/new-password");
-              }}
-            >
-              Password Reset
-            </Button>
+            <Button type="submit">Password Reset</Button>
           </form>
         </div>
       </Section>

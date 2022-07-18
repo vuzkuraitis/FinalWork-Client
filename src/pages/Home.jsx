@@ -118,7 +118,6 @@ const Home = () => {
     const data = await res.json();
 
     setSets(data);
-    console.log(data);
   };
   useEffect(() => {
     getSets();

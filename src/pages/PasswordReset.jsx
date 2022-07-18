@@ -5,9 +5,11 @@ import Section from "../components/Section/Section";
 import BenefitsList from "../components/BenefitsList/BenefitsList";
 import Hero from "../components/Hero/Hero";
 import RegistrationPic from "../assets/reg.jpg";
+import { useNavigate } from "react-router-dom";
 
 const PasswordReset = () => {
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const resetPassword = async (inputs) => {
     try {
@@ -23,11 +25,10 @@ const PasswordReset = () => {
       );
       const data = await res.json();
 
-      console.log(data);
-
       if (data.err) {
         return setError(data.err);
       }
+      navigate("/new-password");
       return setError(data.msg);
     } catch (err) {
       return setError(err.message);

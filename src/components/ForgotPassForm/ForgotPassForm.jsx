@@ -19,6 +19,7 @@ const ForgotPassForm = ({ handleSubmit }) => {
               e.target.reset();
 
               handleSubmit(changePassValues);
+              console.log(changePassValues);
             }}
           >
             <TextInput
@@ -36,10 +37,10 @@ const ForgotPassForm = ({ handleSubmit }) => {
               type="text"
               label="Code"
               placeholder="Code"
-              handleChange={(codeValue) =>
+              handleChange={(tokenValue) =>
                 updateChangePassValues({
                   ...changePassValues,
-                  code: codeValue,
+                  token: tokenValue,
                 })
               }
             />
