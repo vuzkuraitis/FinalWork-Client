@@ -6,7 +6,7 @@ import BenefitsList from "../components/BenefitsList/BenefitsList";
 import Hero from "../components/Hero/Hero";
 import RegistrationPic from "../assets/reg.jpg";
 
-const PasswordReset = () => {
+const NewPassword = () => {
   const [error, setError] = useState();
 
   const updatePassword = async (inputs) => {
@@ -76,4 +76,4 @@ const PasswordReset = () => {
   );
 };
 
-export default PasswordReset;
+export default NewPassword;
