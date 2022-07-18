@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as S from "./AddFavExcForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
@@ -8,7 +9,7 @@ import Hero from "../Hero/Hero";
 const AddFavExcForm = ({ handleSubmit }) => {
   const [exerciseValues, updateExerciseValues] = useState();
   return (
-    <>
+    <S.AddFavExcForm>
       <Hero title="Add Exercise" />
       <Section>
         <div className="formSection">
@@ -41,7 +42,7 @@ const AddFavExcForm = ({ handleSubmit }) => {
           </form>
         </div>
       </Section>
-    </>
+    </S.AddFavExcForm>
   );
 };
 

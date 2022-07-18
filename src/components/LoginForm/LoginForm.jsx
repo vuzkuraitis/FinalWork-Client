@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import * as S from "./LoginForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
   return (
-    <>
+    <S.LoginForm>
       <Hero title="Personal Area" />
       <Section>
         <div className="formSection">
@@ -38,9 +40,25 @@ const LoginForm = ({ handleSubmit }) => {
             />
             <Button type="submit">Login</Button>
           </form>
+          <p>
+            Not a member?
+            <Link to="/register" title="Register" className="loginLink">
+              Register
+            </Link>
+          </p>
+          <p>
+            Forgot password?
+            <Link
+              to="/password-reset"
+              title="Forgot Password"
+              className="forgotPassLink"
+            >
+              Click Here
+            </Link>
+          </p>
         </div>
       </Section>
-    </>
+    </S.LoginForm>
   );
 };
 

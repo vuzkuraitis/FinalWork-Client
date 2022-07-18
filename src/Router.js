@@ -6,6 +6,8 @@ import Loading from "./components/Loading/Loading";
 
 import Register from "./pages/Register";
 import Settings from "./pages/Settings";
+import PasswordReset from "./pages/PasswordReset";
+import NewPassword from "./pages/NewPassword";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -19,6 +21,8 @@ const Router = () => {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
+          <Route exact path="/password-reset" element={<PasswordReset />} />
+          <Route exact path="/new-password" element={<NewPassword />} />
           <Route
             exact
             path="/home"

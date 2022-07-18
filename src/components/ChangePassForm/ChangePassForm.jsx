@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as S from "./ChangePassForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
@@ -8,7 +9,7 @@ import Hero from "../Hero/Hero";
 const ChangePassForm = ({ handleSubmit, exercises }) => {
   const [changepassValues, updateChangepassValues] = useState();
   return (
-    <>
+    <S.ChangePassForm>
       <Hero title="Change Password" />
       <Section>
         <div className="formSection">
@@ -46,7 +47,7 @@ const ChangePassForm = ({ handleSubmit, exercises }) => {
           </form>
         </div>
       </Section>
-    </>
+    </S.ChangePassForm>
   );
 };
 

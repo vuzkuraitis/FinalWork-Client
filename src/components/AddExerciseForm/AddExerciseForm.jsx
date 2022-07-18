@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as S from "./AddExerciseForm.styles";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
@@ -10,7 +11,7 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
   const [exerciseValues, updateExerciseValues] = useState();
 
   return (
-    <>
+    <S.AddExerciseForm>
       <Hero title="Add Workout" />
       <Section>
         <div className="formSection">
@@ -76,7 +77,7 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
           </form>
         </div>
       </Section>
-    </>
+    </S.AddExerciseForm>
   );
 };
 

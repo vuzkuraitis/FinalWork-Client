@@ -3,13 +3,12 @@ import styled from "styled-components";
 export const Notification = styled.div`
   display: flex;
   background: #eeeeee;
-  border-radius: 0.5rem;
   flex-direction: row;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
 `;
 export const RemoveButton = styled.button`
   border-radius: 50%;

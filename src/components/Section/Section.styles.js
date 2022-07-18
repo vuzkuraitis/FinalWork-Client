@@ -36,10 +36,6 @@ export const Section = styled.div`
     height: auto;
     width: 100%;
   }
-  .formSection {
-    margin: 0 auto;
-    padding: 1rem;
-  }
   .sectionThreeLogin {
     width: 100%;
     margin: 3rem auto;
@@ -68,7 +64,6 @@ export const Section = styled.div`
     flex-wrap: wrap;
     font-family: "Roboto", sans-serif;
     justify-content: space-between;
-    margin-bottom: 3rem;
     position: relative
     width: 100%;
     z-index: 1;
@@ -165,6 +160,15 @@ export const Section = styled.div`
   .changePassContainer {
     width: 100%;
   }
+  /* Password reset */
+  .resetContainer {
+    height: auto;
+    width: 100%;
+  }
+  .newPasswordContainer {
+    height: auto;
+    width: 100%;
+  }
   @media screen and (min-width: 768px) {
     .homeSectionContainerData > .homeSectionContainerAdd > .imgContainer {
     background-position: center;
@@ -227,10 +231,9 @@ export const Section = styled.div`
     width: 100%;
   }
     .sectionOneRegister {
-      margin-bottom: 4rem;
       width: 100%;
     }
-    .loginContainer, .registerContainer {
+    .loginContainer, .registerContainer, .resetContainer, .newPasswordContainer {
       position: absolute;
       top: 20%;
       right: 8%;

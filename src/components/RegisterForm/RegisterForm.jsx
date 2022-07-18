@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import * as S from "./RegisterForm.styles";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import Section from "../Section/Section";
@@ -8,7 +9,7 @@ import Hero from "../Hero/Hero";
 const RegisterForm = ({ handleSubmit }) => {
   const [registerValues, updateRegisterValues] = useState();
   return (
-    <>
+    <S.RegisterForm>
       <Hero title="Register" />
       <Section>
         <div className="formSection">
@@ -60,7 +61,7 @@ const RegisterForm = ({ handleSubmit }) => {
           </form>
         </div>
       </Section>
-    </>
+    </S.RegisterForm>
   );
 };
 
