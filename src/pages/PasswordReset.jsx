@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ResetPassForm from "../components/ResetPassForm/ResetPassForm";
 import Notification from "../components/Notification/Notification";
 import Section from "../components/Section/Section";
@@ -9,7 +9,21 @@ import { useNavigate } from "react-router-dom";
 
 const PasswordReset = () => {
   const [error, setError] = useState();
+  const [tokens, setTokens] = useState();
   const navigate = useNavigate();
+
+  const getTokens = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/gettokens`
+    );
+    const data = await res.json();
+
+    setTokens(data);
+    console.log(tokens);
+  };
+  useEffect(() => {
+    getTokens();
+  }, []);
 
   const resetPassword = async (inputs) => {
     try {
@@ -28,6 +42,7 @@ const PasswordReset = () => {
       if (data.err) {
         return setError(data.err);
       }
+      getTokens();
       navigate("/new-password");
       return setError(data.msg);
     } catch (err) {

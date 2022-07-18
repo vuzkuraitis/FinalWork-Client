@@ -23,6 +23,8 @@ const NewPassword = () => {
       );
       const data = await res.json();
 
+      console.log(data);
+
       if (data.err) {
         return setError(data.err);
       }
