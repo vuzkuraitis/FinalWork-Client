@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ResetPassForm from "../components/ResetPassForm/ResetPassForm";
 import Notification from "../components/Notification/Notification";
 import Section from "../components/Section/Section";
@@ -14,7 +14,7 @@ const PasswordReset = () => {
   const resetPassword = async (inputs) => {
     try {
       const res = await fetch(
-        "https://monkfish-app-oz2c8.ondigitalocean.app/v1/users/reset-password",
+        `${process.env.REACT_APP_BACKEND_URL}/v1/users/reset-password`,
         {
           method: "POST",
           headers: {
