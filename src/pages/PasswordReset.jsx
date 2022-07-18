@@ -9,21 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const PasswordReset = () => {
   const [error, setError] = useState();
-  const [tokens, setTokens] = useState();
   const navigate = useNavigate();
-
-  const getTokens = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/v1/users/gettokens`
-    );
-    const data = await res.json();
-
-    setTokens(data);
-    console.log(tokens);
-  };
-  useEffect(() => {
-    getTokens();
-  }, []);
 
   const resetPassword = async (inputs) => {
     try {
@@ -39,13 +25,15 @@ const PasswordReset = () => {
       );
       const data = await res.json();
 
+      console.log(data);
+
       if (data.err) {
         return setError(data.err);
       }
-      getTokens();
       navigate("/new-password");
       return setError(data.msg);
     } catch (err) {
+      console.log(err);
       return setError(err.message);
     }
   };
