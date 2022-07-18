@@ -19,7 +19,6 @@ const ForgotPassForm = ({ handleSubmit }) => {
               e.target.reset();
 
               handleSubmit(changePassValues);
-              console.log(changePassValues);
             }}
           >
             <TextInput

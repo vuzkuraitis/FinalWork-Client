@@ -7,10 +7,10 @@ import Loading from "./components/Loading/Loading";
 import Register from "./pages/Register";
 import Settings from "./pages/Settings";
 import PasswordReset from "./pages/PasswordReset";
-import NewPassword from "./pages/NewPassword";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
+const NewPassword = lazy(() => import("./pages/NewPassword"));
 
 const Router = () => {
   const token = localStorage.getItem("token");
