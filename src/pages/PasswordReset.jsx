@@ -25,15 +25,12 @@ const PasswordReset = () => {
       );
       const data = await res.json();
 
-      console.log(data);
-
       if (data.err) {
         return setError(data.err);
       }
       navigate("/new-password");
       return setError(data.msg);
     } catch (err) {
-      console.log(err);
       return setError(err.message);
     }
   };

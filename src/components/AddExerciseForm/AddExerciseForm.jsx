@@ -21,7 +21,6 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
               e.target.reset();
 
               handleSubmit(exerciseValues);
-              console.log(exerciseValues);
             }}
           >
             <SelectInput
