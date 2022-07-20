@@ -10,11 +10,18 @@ import BackVideo from "../assets/bg.mp4";
 import Card0 from "../assets/Card0.jpg";
 import Card1 from "../assets/Card1.jpeg";
 import Card2 from "../assets/Card2.jpeg";
+import PersonalTraining from "../assets/PersonalTraining.jpeg";
+import Camps from "../assets/Camps.jpeg";
+import Workshops from "../assets/Workshops.jpeg";
+import Movement from "../assets/Movement.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectFade } from "swiper";
+import { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import CardListOffer from "../components/CardListOffer/CardListOffer";
+import CardPrice from "../components/CardPrice/CardPrice";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -53,6 +60,32 @@ const Login = () => {
         "Not only you will set your mind and soul free, but also you will be invited into special Training Camps all over the world.",
       text: "24 Trainings",
       price: "3000€",
+    },
+  ];
+  const offers = [
+    {
+      image: PersonalTraining,
+      title: "Personal Training",
+      subtitle:
+        "You and your project here are 100% in focus. For each training session you will receive an individual concept, as well as exercises what to do at home.",
+    },
+    {
+      image: Camps,
+      title: "Camps",
+      subtitle:
+        "Holiday with a difference, this is what I offer at multi-day training camps in Europe's most beautiful places every year. My experience will give you a lot of exercise, a diet tailored to the daily training and the right mindset. Ideal for realigning your focus far away from everyday life and soaking up the sun and positive vibes.",
+    },
+    {
+      image: Workshops,
+      title: "Workshops",
+      subtitle:
+        "In my workshops, I teach small groups and companies as part of events lasting several hours.",
+    },
+    {
+      image: Movement,
+      title: "Movement",
+      subtitle:
+        "Movement takes place in the form of movement courses in Hamburg. In a great, constantly growing team, we are pursuing the goal of a free and flexible body together. Why movement? Because life is movement.",
     },
   ];
 
@@ -119,7 +152,6 @@ const Login = () => {
         <div className="sectionThreeLogin">
           <Swiper
             modules={[Autoplay, Navigation, EffectFade]}
-            // spaceBetween={50}
             navigation
             effect
             speed={600}
@@ -150,7 +182,33 @@ const Login = () => {
           <Hero subtitle={subtitle}></Hero>
         </div>
         <div className="priceSectionContainer">
+          <Hero title="Prices for Personal Training"></Hero>
+          <Swiper
+            modules={[Navigation, Pagination, EffectFade]}
+            navigation
+            effect
+            loop
+            pagination={{ clickable: true }}
+            speed={800}
+            slidesPerView={1}
+            className="myswiper"
+          >
+            {products.map((product) => (
+              <SwiperSlide className="swiperslide" key={product.title}>
+                <CardPrice
+                  title={product.title}
+                  subtitle={product.subtitle}
+                  text={product.text}
+                  price={product.price}
+                ></CardPrice>
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <CardListPrice products={products}></CardListPrice>
+        </div>
+        <div className="offer">
+          <Hero title="What I Offer To You"></Hero>
+          <CardListOffer offers={offers}></CardListOffer>
         </div>
       </Section>
     </>

@@ -2,12 +2,12 @@ import styled from "styled-components";
 import CardPrice from "../CardPrice/CardPrice";
 
 export const CardListPrice = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: none;
 
   @media screen and (min-width: 768px) {
-    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   @media screen and (min-width: 1024px) {
     justify-content: space-between;
@@ -27,6 +27,7 @@ export const CardItem = styled(CardPrice)`
     }
     :hover {
       transform: scale(1.05);
+      box-shadow: 0px 0px 15px 6px rgba(255, 255, 255, 0.75);
     }
   }
   @media screen and (min-width: 1024px) {

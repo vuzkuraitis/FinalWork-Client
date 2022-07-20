@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./CardListPrice.styles";
 
-const CardListPrice = ({ products, index, title, subtitle, text }) => {
+const CardListPrice = ({ products }) => {
   return (
-    <S.CardListPrice>
+    <S.CardListPrice className="active">
       {products &&
         products.map((product, index) => (
           <S.CardItem

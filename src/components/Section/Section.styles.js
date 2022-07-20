@@ -57,6 +57,12 @@ export const Section = styled.div`
         }
     }
   }
+  .offer > .hero {
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+      width:90%;
+    }
+  }
   /* Register */
   .sectionOneRegister {
     background: #000000;
@@ -236,7 +242,7 @@ export const Section = styled.div`
     .loginContainer, .registerContainer, .resetContainer, .newPasswordContainer {
       position: absolute;
       top: 20%;
-      right: 8%;
+      right: 7%;
       width: 25%;
       .hero {
         background: transparent;
@@ -266,6 +272,9 @@ export const Section = styled.div`
     .priceSectionContainer {
       margin: 0 auto;
       width: 90%;
+      .myswiper {
+        display: none;
+      }
     }
     .addWrapper {
       align-items: center;

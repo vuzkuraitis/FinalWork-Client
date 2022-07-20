@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const CardPrice = styled.div`
-  background: #787a91;
+  background: #333444;
+  height: 60vh;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -27,5 +28,8 @@ export const CardPrice = styled.div`
     :last-child {
       border-bottom: none;
     }
+  }
+  @media screen and (min-width: 768px) {
+    height: auto;
   }
 `;
