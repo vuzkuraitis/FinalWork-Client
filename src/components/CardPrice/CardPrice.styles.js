@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardPrice = styled.div`
   background: #333444;
-  height: 60vh;
+  height: 70vh;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-align: center;
