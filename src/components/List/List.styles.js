@@ -15,18 +15,19 @@ export const List = styled.div`
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
   }
 
   li:nth-last-child(1) {
     border-bottom: none;
   }
   li {
+    background: #333444;
     transition: ease 0.3s;
   }
   li:hover {
-    background: #ffffff;
-    color: #000000;
+    transform: scale(1.02);
+    background: #87878e;
   }
   .delete {
     color: #ff8b8b;

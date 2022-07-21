@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 
 export const CardList = styled.div`
   .cardlist-inside {
-    background: #787a91;
+    background: #333444;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

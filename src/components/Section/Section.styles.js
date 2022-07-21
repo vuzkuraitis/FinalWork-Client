@@ -402,5 +402,10 @@ export const Section = styled.div`
         }
       }
     }
+    .favExercises {
+      margin-left: 5%;
+      float: left;
+      width: 45%;
+    }
   }
 `;
