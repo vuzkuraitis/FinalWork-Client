@@ -14,6 +14,11 @@ import PersonalTraining from "../assets/PersonalTraining.jpeg";
 import Camps from "../assets/Camps.jpeg";
 import Workshops from "../assets/Workshops.jpeg";
 import Movement from "../assets/Movement.jpeg";
+import Nicole from "../assets/Nicole.webp";
+import Jan from "../assets/Jan.webp";
+import Susanne from "../assets/Susanne.webp";
+import Marc from "../assets/Marc.webp";
+import Bernd from "../assets/Bernd.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
 import "swiper/css";
@@ -22,6 +27,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import CardListOffer from "../components/CardListOffer/CardListOffer";
 import CardPrice from "../components/CardPrice/CardPrice";
+import CardFeedback from "../components/CardFeedback/CardFeedback";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -86,6 +92,33 @@ const Login = () => {
       title: "Movement",
       subtitle:
         "Movement takes place in the form of movement courses in Hamburg. In a great, constantly growing team, we are pursuing the goal of a free and flexible body together. Why movement? Because life is movement.",
+    },
+  ];
+  const feedbacks = [
+    {
+      image: Nicole,
+      name: "Nicole",
+      text: "My training is always like a little journey. I am grateful for such a competent coach. It is always good for me to face new challenges.",
+    },
+    {
+      image: Jan,
+      name: "Jan",
+      text: "Inspiring, motivating and a lot of fun. These are the words that come to mind spontaneously when I think about training with Egi. In addition to being able to pick me up exactly where I am, he challenges me at the same moment and helps me to move better, to feel better! Besides that, he's just a really good guy!!",
+    },
+    {
+      image: Susanne,
+      name: "Susanne",
+      text: "Hamburg Athletics feels good! It unfolds potential and elicits emotions, whether you want it or not. HamburgAthletics is challenging and never boring. Training with Egi has been an integral part of my life for 10 years because I have understood that every cell in my body is crying out for movement and development. And I get that through him to perfection. Thank you Egi!",
+    },
+    {
+      image: Marc,
+      name: "Marc",
+      text: "Egi's training is varied, intelligent, demanding and entertaining. He responds individually to my daily form and feels exactly which exercises and in what intensity I currently need. After every workout I'm sweaty and happy.",
+    },
+    {
+      image: Bernd,
+      name: "Bernd",
+      text: "Egi is not only one of the best trainers, but also a wonderful person. I enjoy every minute I spend with him. And by the way, he has managed to transform me from fat to fit in the last 3 years.",
     },
   ];
 
@@ -209,6 +242,43 @@ const Login = () => {
         <div className="offer">
           <Hero title="What I Offer To You"></Hero>
           <CardListOffer offers={offers}></CardListOffer>
+        </div>
+        <div className="feedback">
+          <Hero title="Feedback"></Hero>
+          <Swiper
+            modules={[Autoplay, Navigation, EffectFade]}
+            navigation
+            effect
+            loop={true}
+            speed={9000}
+            autoplay={{
+              delay: 1,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={1}
+            spaceBetween={0}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1201: {
+                slidesPerView: 3,
+                spaceBetween: 200,
+              },
+            }}
+            className="myswiper"
+          >
+            {feedbacks.map((feedback) => (
+              <SwiperSlide className="swiperslide" key={feedback.name}>
+                <CardFeedback
+                  image={feedback.image}
+                  name={feedback.name}
+                  text={feedback.text}
+                ></CardFeedback>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </Section>
     </>

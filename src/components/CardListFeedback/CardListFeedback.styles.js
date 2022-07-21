@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import CardOffer from "../CardOffer/CardOffer";
+import CardFeedback from "../CardFeedback/CardFeedback";
 
-export const CardListOffer = styled.div`
+export const CardListFeedback = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  /* @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin: 0 auto;
     width: 90%;
-  } */
+  }
 `;
 
-export const CardOfferItem = styled(CardOffer)`
+export const CardFeedbackItem = styled(CardFeedback)`
   box-sizing: border-box;
   color: #ffffff;
   margin-bottom: 3rem;

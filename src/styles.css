@@ -8,3 +8,8 @@ body {
 .swiper-pagination > .swiper-pagination-bullet-active {
   background: #ffffff !important;
 }
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}

@@ -57,10 +57,23 @@ export const Section = styled.div`
         }
     }
   }
-  .offer > .hero {
-    @media screen and (min-width: 768px) {
-      margin: 0 auto;
-      width:90%;
+  .offer {
+    width: 100%;
+  }
+  .feedback {
+    width: 100%;
+    .myswiper {
+      width: 100%;
+      .swiperslide {
+        p{
+          margin: 0 auto;
+          width: 50%;
+        }
+      }
+      .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
     }
   }
   /* Register */
@@ -216,6 +229,18 @@ export const Section = styled.div`
         }
       }
     }
+    .feedback {
+      margin: 0 auto;
+      width: 90%;
+      .myswiper {
+        width: 100%;
+        .swiperslide {
+          p{
+          width: 100%;
+        }
+        }
+      }
+    }
     .imgContainer {
       position:relative;
       width: 100%;
@@ -357,13 +382,25 @@ export const Section = styled.div`
       color: #787a91;
       margin: 1rem 0;
     }
+    .offer {
+      margin: 0 auto;
+      width:90%;    
   }
+  }
+
   @media screen and (min-width: 1201px) {
     .registrationBenefits > .hero > .hero-body > h1 {
       font-size: 2rem;
     }
     .registrationBenefits > ul > li {
       font-size: 1rem;
+    }
+    .feedback {
+      .myswiper {
+        .swiperslide {
+          width: 30%;
+        }
+      }
     }
   }
 `;
