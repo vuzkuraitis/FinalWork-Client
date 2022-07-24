@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.div`
-  background: ${({ scrolled }) => (scrolled ? "#ECB365" : "transparent")};
+  background: ${({ scrolled }) => (scrolled ? "#333444" : "transparent")};
   display: flex;
   font-family: "Roboto", sans-serif;
   justify-content: center;

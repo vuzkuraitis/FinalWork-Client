@@ -76,6 +76,11 @@ export const Section = styled.div`
         }
     }
   }
+.homeSectionContainerAdd > .nodata {
+    color: #787a91;
+    padding: 1rem;
+}
+
   /* Register */
   .sectionOneRegister {
     background: #000000;
@@ -188,6 +193,7 @@ export const Section = styled.div`
     height: auto;
     width: 100%;
   }
+
   @media screen and (min-width: 768px) {
     .homeSectionContainerData > .homeSectionContainerAdd > .imgContainer {
     background-position: center;
@@ -230,7 +236,7 @@ export const Section = styled.div`
       }
     }
     .feedback {
-      margin: 0 auto;
+      margin: 0 auto 2rem auto;
       width: 90%;
       .myswiper {
         width: 100%;
@@ -266,7 +272,7 @@ export const Section = styled.div`
     }
     .loginContainer, .registerContainer, .resetContainer, .newPasswordContainer {
       position: absolute;
-      top: 20%;
+      top: 15%;
       right: 7%;
       width: 25%;
       .hero {
@@ -275,7 +281,7 @@ export const Section = styled.div`
     }
     .registerWrapper {
       position: absolute;
-      top: 20%;
+      top: 15%;
       left: 8%;
       width: 50%;
     }

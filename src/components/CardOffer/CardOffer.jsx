@@ -6,7 +6,7 @@ const CardOffer = ({ title, subtitle, image, className }) => {
   return (
     <S.CardOffer className={className}>
       <img alt="Offer" src={image} />
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{subtitle}</p>
     </S.CardOffer>
   );

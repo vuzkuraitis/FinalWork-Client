@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.div`
-  background: #000000;
+  background: #333444;
   color: #ffffff;
   display: flex;
   font-family: "Roboto", sans-serif;

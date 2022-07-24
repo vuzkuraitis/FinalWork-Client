@@ -17,6 +17,10 @@ export const CardOfferItem = styled(CardOffer)`
   color: #ffffff;
   margin-bottom: 3rem;
   width: 100%;
+  img {
+    height: auto;
+    width: 100%;
+  }
 
   h2 {
     margin: 1rem auto;

@@ -16,12 +16,16 @@ import Home3 from "../assets/home3.jpeg";
 import Home4 from "../assets/home4.jpeg";
 import SectionOne from "../assets/SectionOne.png";
 import CardList from "../components/CardList/CardList";
+import EventList from "../components/EventList/EventList";
+import Popup from "../components/Popup/Popup";
 
 const Home = () => {
   const [users, setUsers] = useState();
   const [error, setError] = useState();
   const [selects, setSelects] = useState();
   const [sets, setSets] = useState();
+  const [events, setEvents] = useState();
+  const [popupOpen, setPopupOpen] = useState(false);
 
   const subtitle =
     "'The body without pain - the mind without confusion'. Creating this state is the mission of Hamburg Athletics. Everyone knows those moments when we are completely immersed in what we are doing. Moments when the world seems to stand still.";
@@ -40,6 +44,24 @@ const Home = () => {
   };
   useEffect(() => {
     getData();
+  }, []);
+
+  const getEvents = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/v1/users/events`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    const data = await res.json();
+
+    setEvents(data);
+    console.log(data);
+  };
+  useEffect(() => {
+    getEvents();
   }, []);
 
   const getSelection = async () => {
@@ -123,6 +145,10 @@ const Home = () => {
     getSets();
   }, []);
 
+  const togglePopup = () => {
+    setPopupOpen(!popupOpen);
+  };
+
   return (
     <>
       <Section>
@@ -148,6 +174,18 @@ const Home = () => {
             <div className="imgContainer">
               <img src={SectionOne} alt="Hamburg Egi" className="under-image" />
             </div>
+            {events && events.length === 0 && (
+              <div className="nodata">No Upcoming Events detected...</div>
+            )}
+            {events && events.length > 0 && (
+              <EventList events={events} handleClick={togglePopup}></EventList>
+            )}
+            {popupOpen && (
+              <Popup handleClick={togglePopup}>
+                {events &&
+                  events.map((event) => <img src={event.logo} alt="Camp" />)}
+              </Popup>
+            )}
             <div className="addWrapper">
               <div className="addExercise">
                 <AddExerciseForm

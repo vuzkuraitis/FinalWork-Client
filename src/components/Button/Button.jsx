@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./Button.styles";
 
-const Button = ({ type, children, handleClick }) => {
+const Button = ({ id, type, children, handleClick }) => {
   return (
-    <S.Button type={type} onClick={handleClick}>
+    <S.Button type={type} onClick={handleClick} id={id} value={id}>
       {children}
     </S.Button>
   );
