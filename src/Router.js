@@ -15,7 +15,7 @@ const NewPassword = lazy(() => import("./pages/NewPassword"));
 const Router = () => {
   const token = localStorage.getItem("token");
   return (
-    <BrowserRouter>
+    <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
       <Nav />
       <Suspense fallback={<Loading />}>
         <Routes>

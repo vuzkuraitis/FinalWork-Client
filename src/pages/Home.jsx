@@ -18,6 +18,7 @@ import SectionOne from "../assets/SectionOne.png";
 import CardList from "../components/CardList/CardList";
 import EventList from "../components/EventList/EventList";
 import Popup from "../components/Popup/Popup";
+import RegisterEventForm from "../components/RegisterEventForm/RegisterEventForm";
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -104,6 +105,7 @@ const Home = () => {
       return setError(err.message);
     }
   };
+
   const removeExercise = async (id) => {
     try {
       const res = await fetch(
@@ -149,6 +151,27 @@ const Home = () => {
     setPopupOpen(!popupOpen);
   };
 
+  const registerEvent = async (inputs) => {
+    try {
+      const res = await fetch(`http://localhost:8080/v1/users/register-event`, {
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      });
+      const data = await res.json();
+      if (data.err) {
+        return setError(data.err);
+      }
+      getSets();
+      return setError("Succesfully registered at Event");
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
+
   return (
     <>
       <Section>
@@ -183,7 +206,15 @@ const Home = () => {
             {popupOpen && (
               <Popup handleClick={togglePopup}>
                 {events &&
-                  events.map((event) => <img src={event.logo} alt="Camp" />)}
+                  events.map((event) => (
+                    <div className="popup-info">
+                      <img src={event.logo} alt="Camp" />
+                      <RegisterEventForm
+                        events={events}
+                        handleSubmit={registerEvent}
+                      ></RegisterEventForm>
+                    </div>
+                  ))}
               </Popup>
             )}
             <div className="addWrapper">

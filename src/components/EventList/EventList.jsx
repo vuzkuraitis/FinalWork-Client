@@ -13,7 +13,22 @@ const EventList = ({ events, id, type, handleClick, handleChange }) => {
         {events &&
           events.map((event) => (
             <li key={event.id} className="eventListItem">
-              {event.event}
+              <div className="innerDiv">
+                {event.event}
+                <div>
+                  <span>Location:</span>
+                  {event.location}
+                </div>
+                <div>
+                  <span>Date:</span>
+                  {event.date}
+                </div>
+                <div>
+                  <span>Price:</span>
+                  {event.camp_price} EUR
+                </div>
+              </div>
+
               <Button
                 type="submit"
                 handleClick={handleClick}

@@ -24,6 +24,7 @@ const AddExerciseForm = ({ handleSubmit, exercises, className }) => {
             }}
           >
             <SelectInput
+              title="Workout"
               options={exercises}
               label="Exercise"
               type="number"

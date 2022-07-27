@@ -12,4 +12,7 @@ export const SelectInput = styled.div`
     margin: 0.5rem 0;
     padding: 0.5rem;
   }
+  label {
+    color: #ffffff;
+  }
 `;

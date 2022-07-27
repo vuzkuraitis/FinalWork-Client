@@ -11,18 +11,18 @@ export const Popup = styled.div`
 
   .inner-popup {
     position: relative;
-    width: 70%;
+    width: 80%;
     background-color: #ffffff;
-    margin: 10rem auto;
-    overflow: auto;
+    margin: 5rem auto;
+    overflow: scroll;
   }
 
   .close-btn {
     cursor: pointer;
     border-radius: 50%;
     position: fixed;
-    right: 14%;
-    top: 9rem;
+    right: 8%;
+    top: 4rem;
   }
 
   img {
@@ -30,9 +30,40 @@ export const Popup = styled.div`
     width: 100%;
   }
 
-  @media screen and (min-width: 1024px) {
+  .popup-info > .field > label {
+    color: #ffffff;
+  }
+  @media screen and (min-width: 530px) {
     .inner-popup {
-      height: 60vh;
+      width: 60%;
+    }
+    .close-btn {
+      right: 18%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .inner-popup {
+      width: 45%;
+    }
+    .close-btn {
+      right: 26%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .close-btn {
+      top: 9rem;
+      right: 4%;
+    }
+    .inner-popup {
+      width: 90%;
+      margin: 10rem auto;
+    }
+    .popup-info {
+      display: flex;
+      height: auto;
+    }
+    img {
+      width: 50%;
     }
   }
 `;
