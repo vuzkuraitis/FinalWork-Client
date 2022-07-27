@@ -62,6 +62,7 @@ export const Section = styled.div`
   }
   .feedback {
     width: 100%;
+    margin-bottom: 1rem;
     .myswiper {
       width: 100%;
       .swiperslide {

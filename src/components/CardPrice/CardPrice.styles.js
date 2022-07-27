@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const CardPrice = styled.div`
   background: #333444;
-  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75vh;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-align: center;
