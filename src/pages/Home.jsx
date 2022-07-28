@@ -153,14 +153,17 @@ const Home = () => {
 
   const registerEvent = async (inputs) => {
     try {
-      const res = await fetch(`http://localhost:8080/v1/users/register-event`, {
-        method: "POST",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/users/register-event`,
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        }
+      );
       const data = await res.json();
       if (data.err) {
         return setError(data.err);
@@ -205,6 +208,11 @@ const Home = () => {
             )}
             {popupOpen && (
               <Popup handleClick={togglePopup}>
+                {error && (
+                  <Notification handleClick={() => setError(null)}>
+                    {error}
+                  </Notification>
+                )}
                 {events &&
                   events.map((event) => (
                     <div className="popup-info">

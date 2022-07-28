@@ -36,7 +36,7 @@ export const EventList = styled.div`
   }
   li:hover {
     transform: scale(1.02);
-    background: #87878e;
+    background: #333444;
   }
   span {
     margin-right: 0.5rem;
