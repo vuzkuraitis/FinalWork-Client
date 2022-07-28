@@ -66,4 +66,14 @@ export const Popup = styled.div`
       width: 50%;
     }
   }
+  @media screen and (min-width: 1201px) {
+    .close-btn {
+      top: 7rem;
+      right: 15%;
+    }
+    .inner-popup {
+      width: 70%;
+      margin: 8rem auto;
+    }
+  }
 `;
